@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>部署教程 · 公考看板（给搭建者看）</title>
+<style>
+:root{--c1:#4f46e5;--c2:#9333ea;--ink:#1e293b;--muted:#64748b;--bg:#f4f5fb;--card:#fff;--ok:#059669;--warn:#d97706;--line:#e2e8f0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;font-size:15px;line-height:1.7;padding-bottom:60px}
+.wrap{max-width:720px;margin:0 auto;padding:0 16px}
+header{background:linear-gradient(135deg,var(--c1),var(--c2));color:#fff;padding:22px 16px;margin-bottom:8px}
+header .wrap{padding:0 4px}
+h1{font-size:20px}
+header p{opacity:.9;font-size:13.5px;margin-top:4px}
+.card{background:var(--card);border-radius:14px;padding:16px 18px;margin-top:14px;box-shadow:0 1px 4px rgba(15,23,42,.06)}
+.step{display:flex;gap:12px;margin-top:18px}
+.num{flex-shrink:0;width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--c1),var(--c2));color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:15px}
+h2{font-size:16.5px;margin-bottom:6px}
+h3{font-size:14px;margin:10px 0 4px;color:var(--c1)}
+p,li{font-size:14px}
+ul,ol{padding-left:20px}
+li{margin:3px 0}
+code{background:#eef2ff;color:var(--c1);border-radius:5px;padding:1px 6px;font-size:13px;font-family:Consolas,monospace}
+pre{background:#0f172a;color:#e2e8f0;border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:12.5px;line-height:1.6;margin:8px 0}
+pre code{background:none;color:inherit;padding:0}
+.tip{background:#ecfdf5;border-radius:10px;padding:9px 12px;font-size:13px;margin:8px 0;border-left:4px solid var(--ok)}
+.warn{background:#fffbeb;border-radius:10px;padding:9px 12px;font-size:13px;margin:8px 0;border-left:4px solid var(--warn)}
+.flow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0;font-size:12.5px;font-weight:600}
+.flow .n{background:#eef2ff;color:var(--c1);border-radius:9px;padding:7px 11px;text-align:center}
+.flow .a{color:var(--muted)}
+table{width:100%;border-collapse:collapse;font-size:13px;margin:8px 0}
+td,th{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
+th{background:#f8fafc}
+.kbd{display:inline-block;border:1px solid #cbd5e1;border-bottom-width:2px;border-radius:5px;padding:0 6px;font-size:12px;background:#f8fafc}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <h1>📘 公考看板 · 部署教程</h1>
+  <p>全程网页操作，不用敲命令 · 一次性约 30 分钟 · 之后永远自动运行</p>
+</div></header>
+<div class="wrap">
+
+<div class="card">
+<h2>整体架构（为什么之后什么都不用管）</h2>
+<div class="flow">
+  <span class="n">☁️ GitHub 服务器<br><small>每4小时定时跑</small></span><span class="a">→</span>
+  <span class="n">🤖 自动巡检官网<br><small>公告/职位表/人数</small></span><span class="a">→</span>
+  <span class="n">📝 生成最新数据</span><span class="a">→</span>
+  <span class="n">🌐 自动发布网页<br><small>手机打开即最新</small></span><span class="a">→</span>
+  <span class="n">💬 微信推送<br><small>新公告/快截止</small></span>
+</div>
+<p>你（搭建者）只需要做第 1~5 步。两位闺蜜什么都不用装，收到网址 → 添加到主屏幕，完事。</p>
+</div>
+
+<div class="card">
+<div class="step"><div class="num">1</div><div>
+<h2>注册 GitHub 账号（1分钟）</h2>
+<p>打开 <code>github.com/signup</code>，用邮箱注册。用户名建议用字母（后面网址里会出现它）。</p>
+</div></div>
+
+<div class="step"><div class="num">2</div><div>
+<h2>创建仓库（2分钟）</h2>
+<ol>
+  <li>登录后点右上角 <span class="kbd">+</span> → <span class="kbd">New repository</span></li>
+  <li>仓库名填：<code>gongkao-dashboard</code></li>
+  <li>选 <b>Public</b>（免费开通网页托管必须选这个）</li>
+  <li>点 <span class="kbd">Create repository</span></li>
+</ol>
+</div></div>
+
+<div class="step"><div class="num">3</div><div>
+<h2>上传「考公看板」文件夹里的全部文件（10分钟）</h2>
+<p>在新仓库页面点 <span class="kbd">uploading an existing file</span>，然后把 <code>考公看板</code> 文件夹<b>整个拖进浏览器</b>（里面要能看到 index.html、data、scripts、icons、.github 这些）。</p>
+<div class="warn">⚠️ 如果传完后发现文件列表里没有 <code>.github</code> 文件夹（个别浏览器会忽略点开头的文件夹），手动补建：<br>
+点 <span class="kbd">Add file → Create new file</span>，文件名输入 <code>.github/workflows/update.yml</code>，然后把下面内容完整粘进去，点 Commit：</div>
+<pre><code>name: auto-update
+
+on:
+  schedule:
+    # UTC 0/4/8/12/16/20 点 = 北京时间 8/12/16/20/0/4 点，每天6次巡检
+    - cron: '0 0,4,8,12,16,20 * * *'
+  workflow_dispatch: {}   # 允许在网页上手动点击运行（测试用）
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 安装依赖
+        run: pip install requests pyyaml
+
+      - name: 抓取数据
+        env:
+          PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
+        run: python scripts/fetch_data.py
+
+      - name: 提交更新
+        run: |
+          git config user.name "auto-update-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add data/
+          git diff --cached --quiet || (git commit -m "数据自动更新 $(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M')" && git push)</code></pre>
+</div></div>
+
+<div class="step"><div class="num">4</div><div>
+<h2>开通网页托管 GitHub Pages（2分钟）</h2>
+<ol>
+  <li>仓库页点 <span class="kbd">Settings → Pages</span></li>
+  <li>Branch 选 <code>main</code> + <code>/(root)</code>，点 Save</li>
+  <li>等 1~2 分钟刷新，页面顶部会出现网址：<br><code>https://你的用户名.github.io/gongkao-dashboard/</code></li>
+</ol>
+<p><b>手机浏览器打开这个网址，看板就上线了。</b></p>
+</div></div>
+
+<div class="step"><div class="num">5</div><div>
+<h2>验证自动更新已在跑（2分钟）</h2>
+<ol>
+  <li>仓库页点 <span class="kbd">Actions</span> 标签</li>
+  <li>左侧点 <span class="kbd">auto-update</span> → 右侧点 <span class="kbd">Run workflow ▾ → Run workflow</span>（手动触发一次测试）</li>
+  <li>等 1 分钟变绿 ✅，再打开看板网址，顶部"数据更新于"应该变成了刚才的时间</li>
+  <li>之后无需任何操作：每天 8/12/16/20/0/4 点自动巡检 6 次</li>
+</ol>
+</div></div>
+
+<div class="step"><div class="num">6</div><div>
+<h2>（可选，强烈推荐）微信推送提醒</h2>
+<p>作用：闺蜜就算几天不看网页，新公告、3 天内截止的事项也会自动推送到微信。</p>
+<ol>
+  <li>微信搜索「<b>pushplus 推送加</b>」公众号并关注</li>
+  <li>点公众号菜单「激活账号」→ 微信授权，得到一串 <b>token</b>（复制）</li>
+  <li>把 token 发给闺蜜，让她也关注该公众号并授权（一人一 token）</li>
+  <li>回到 GitHub 仓库：<span class="kbd">Settings → Secrets and variables → Actions</span> → <span class="kbd">New repository secret</span>，Name 填 <code>PUSHPLUS_TOKEN</code>，Secret 填刚才的 token</li>
+  <li>在 Actions 页手动跑一次 auto-update，微信收到消息即成功</li>
+</ol>
+<div class="tip">💡 免费版每天可推多条，完全够用。不改也行，看板顶部的倒计时提醒照常工作。</div>
+</div></div>
+
+<div class="step"><div class="num">7</div><div>
+<h2>发给两位闺蜜：装成 App（每人10秒）</h2>
+<table>
+  <tr><th>手机</th><th>操作</th></tr>
+  <tr><td>iPhone（Safari 打开网址）</td><td>点底部 <span class="kbd">分享</span> 按钮 → <b>添加到主屏幕</b> → 添加。桌面出现"公考看板"图标，点开是全屏 App</td></tr>
+  <tr><td>安卓（Chrome/自带浏览器）</td><td>右上角 <span class="kbd">⋮</span> → <b>添加到主屏幕</b>（或"安装应用"）</td></tr>
+</table>
+<p>打开后各自点自己的头像标签（闺蜜A / 闺蜜B），选择会记住。看板离线也能打开（显示上次的数据）。</p>
+</div></div>
+
+<div class="card">
+<h2>📱 闺蜜使用说明（可直接截图发给她）</h2>
+<ul>
+  <li><b>🔔 最上面是截止提醒</b>：按紧急程度排序，<span style="color:#dc2626;font-weight:600">红色=3天内截止</span>（会闪烁），橙色=7天内。点「去办理」直达官方报名/缴费入口。</li>
+  <li><b>标着「预计」的日期</b>是按往年规律推算的，官方公告一出（通常4小时内）自动变成确定信息并收录。</li>
+  <li><b>💼 岗位页签</b>：感兴趣的工作点 ☆ 收藏，会置顶到"我的关注"，她的报名截止也会自动加进顶部提醒。</li>
+  <li><b>📢 公告页签</b>：所有新公告自动出现，带原文链接和收录时间。</li>
+  <li>页面顶部永远显示 <b>「⏰ 数据更新于 某年某月某日 某时某分」</b>——看到它就知道数据新不新鲜。</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>❓ 常见问题</h2>
+<h3>1. 打开看板显示"数据更新于"是很久以前？</h3>
+<p>去仓库 Actions 页看最近一次 auto-update 是否变红（失败）。常见原因是官网临时改版，属正常现象，下一轮一般自愈；也可手动 Run workflow 重试。</p>
+<h3>2. 巡检日志里有个别官网"超时"黄标？</h3>
+<p>正常。部分官网限制境外服务器访问（GitHub 服务器在国外），看板会明确标出哪些源没抓到，这些源的信息仍会出现在"官网入口"里可手动查看。重要源（江苏组织部、安徽考试网等）一般都通。</p>
+<h3>3. 手机上 GitHub 网页偶尔打不开/很慢？</h3>
+<p>给看板网址套一层国内加速：注册 <b>Cloudflare</b>（免费）→ Workers & Pages → 创建 Pages → 连接 GitHub 仓库 → 直接部署。得到 <code>xxx.pages.dev</code> 网址，国内访问明显更快。两边数据自动同步，不用维护两份。</p>
+<h3>4. 想改关注的专业/地区/增减数据源？</h3>
+<p>改 <code>scripts/sources.yaml</code>（数据源和两位的专业关键词都在里面），在 GitHub 网页上点开文件 → 铅笔图标编辑 → Commit，下一轮巡检自动生效。</p>
+<h3>5. 职位表什么时候会出现在"岗位"页签？</h3>
+<p>各省职位表随公告一起发布。脚本发现公告后会自动尝试下载并解析 Excel，按专业匹配；遇到全新表格格式会标「待核对」，此时人工点原文确认一下即可。</p>
+<h3>6. 忘记配置第 6 步的微信推送？</h3>
+<p>随时可补，配好后从下一轮巡检开始生效。</p>
+</div>
+
+<div class="card">
+<h2>🔑 眼下最重要的三件事（2026年10月28日）</h2>
+<ul>
+  <li>🔴 <b>闺蜜A · 2027国考缴费 11月1日–6日</b>：不缴费视为放弃！</li>
+  <li>🔴 <b>闺蜜A · 2027江苏选调生（应届限定）</b>：公告已于10.13发布，报名即将截止，抓紧看原文。</li>
+  <li>🔴 <b>两位 · 2027江苏省考公告预计 10.30 前后发布</b>：发布后自动进看板+微信提醒，报名窗口仅约7天且当天16:00截止。</li>
+  <li>🟡 <b>闺蜜B</b>：保持"未就业未缴社保"状态以保住应届身份；普通话二甲已达标，语文岗无障碍。</li>
+</ul>
+</div>
+
+</div>
+</body>
+</html>
