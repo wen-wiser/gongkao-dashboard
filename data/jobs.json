@@ -1,0 +1,9 @@
+{
+  "summary": { "total": 0, "matched_A": 0, "matched_B": 0, "note": "各省职位表随公告一起发布（江苏预计10.30前后）。发布后脚本自动下载Excel解析，并按两位的专业条件筛选匹配" },
+  "jobs": [
+    { "id": "ref-a1", "is_reference": true, "exam": "省考", "region": "江苏", "unit": "江苏省发展和改革委员会（2026年度先例）", "position": "长江经济带发展处·二级主任科员及以下", "majors": "城乡规划、城乡规划学、城市规划、统计学、区域经济学、环境科学等", "degree": "本科及以上", "identity": "应届可报", "url": "http://www.jszzb.gov.cn/tzgg/art/2025/art_6751a2769ba4505cfed66f38573a7983.html", "owner": ["A"], "note": "2026年度真实岗位，说明城乡规划专业在省直机关有对口岗；2027职位表发布后此处自动更新为最新匹配" },
+    { "id": "ref-a2", "is_reference": true, "exam": "省考", "region": "江苏", "unit": "江苏省国防动员办公室（2026年度先例）", "position": "机关处室综合管理岗·一级主任科员及以下", "majors": "城乡规划学、建筑学、土木工程、市政工程、电气工程等", "degree": "本科及以上", "identity": "应届可报", "url": "http://www.jszzb.gov.cn/tzgg/art/2025/art_ab7eeffb10b7f4423a4806d2cf1f9138.html", "owner": ["A"], "note": "同上；自然资源局、住建局、开发区管委会是城乡规划的主要对口方向" },
+    { "id": "ref-b1", "is_reference": true, "exam": "教师编", "region": "江浙沪皖", "unit": "各地中小学（各市县持续发布）", "position": "语文教师岗", "majors": "汉语言文学（师范）、汉语言、中国语言文学类", "degree": "本科及以上", "identity": "2026届毕业2年内未就业可报多数应届岗（江浙皖多省已放宽）", "url": "https://jyt.ah.gov.cn/xwzx/tzgg/40783870.html", "owner": ["B"], "note": "语文岗普遍要求普通话二甲——闺蜜B已具备。重点盯：江苏各市（全年分散）、安徽4月统考、杭州5月批次、上海各区3-4月" },
+    { "id": "ref-b2", "is_reference": true, "exam": "省考", "region": "江浙沪皖", "unit": "各级机关（岗位量大）", "position": "公文写作/宣传/办公室类岗位", "majors": "汉语言文学属【中文文秘类】（江苏省考专业目录最大类别之一）", "degree": "本科及以上", "identity": "择业期内未就业可按应届报考（岗位备注为准）", "url": "https://rsj.nantong.gov.cn/ntsrsj/upload/4c5698ae-5af7-4b4c-b765-8d0dd8dcbcac.pdf", "owner": ["B"], "note": "汉语言是考公第一梯队专业；江苏省2026年度专业参考目录中，汉语言文学、汉语言、汉语言文学教育等均属中文文秘类" }
+  ]
+}
