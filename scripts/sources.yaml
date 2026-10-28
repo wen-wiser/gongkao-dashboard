@@ -1,0 +1,106 @@
+# ================= 公考看板 · 配置文件 =================
+# 改这里即可增减数据源/调整关注专业，无需动其他代码
+
+# ---- 人物画像（用于岗位匹配和公告归属） ----
+profiles:
+  A:
+    name: 闺蜜A·城乡规划
+    identity: 2027届应届（五年制大五）
+    major_keywords: ["城乡规划", "城乡规划学", "城市规划", "建筑学", "土木工程", "市政工程"]
+  B:
+    name: 闺蜜B·汉语言（师范）
+    identity: 2026届 · 择业期内未就业
+    major_keywords: ["汉语言", "中文文秘", "中国语言文学", "汉语言文学教育", "学科教学（语文）"]
+    subject: 语文
+
+# ---- 官方数据源（脚本每4小时巡检一次） ----
+# 说明：抓取失败不影响已有数据，失败源会在看板上黄标提示
+sources:
+  - id: gk2027
+    name: 国考2027专题站
+    region: 全国
+    exam: 国考
+    url: http://bm.scs.gov.cn/kl2027
+
+  - id: js_zzb
+    name: 江苏省委组织部（公务员招录）
+    region: 江苏
+    exam: 省考
+    url: http://www.jszzb.gov.cn/
+
+  - id: csj
+    name: 长三角公务员考录一体化平台
+    region: 长三角
+    exam: 省考
+    url: https://www.csjgwy.com/
+
+  - id: zj_gwy
+    name: 浙江人事考试网
+    region: 浙江
+    exam: 省考
+    url: https://gwy.zjks.gov.cn/
+
+  - id: sh_gwy
+    name: 上海市公务员局
+    region: 上海
+    exam: 省考
+    url: https://www.shacs.gov.cn/
+
+  - id: ah_apta
+    name: 安徽人事考试网
+    region: 安徽
+    exam: 省考
+    url: http://www.apta.gov.cn/
+
+  - id: ah_xf
+    name: 安徽先锋网
+    region: 安徽
+    exam: 省考
+    url: https://www.ahxf.gov.cn/
+
+  - id: js_rss
+    name: 江苏人社厅（事业编/教师编）
+    region: 江苏
+    exam: 事业编
+    url: https://jshrss.jiangsu.gov.cn/
+
+  - id: zj_rlsbt
+    name: 浙江人社厅（事业编）
+    region: 浙江
+    exam: 事业编
+    url: https://rlsbt.zj.gov.cn/col/col1229743683/index.html
+
+  - id: ah_hrss
+    name: 安徽人社厅（省直事业编专栏）
+    region: 安徽
+    exam: 事业编
+    url: https://hrss.ah.gov.cn/zxzx/ztzl/ahsszsydwgkzp/
+
+  - id: ah_edu
+    name: 安徽省教育厅（教师招聘）
+    region: 安徽
+    exam: 教师编
+    url: https://jyt.ah.gov.cn/xwzx/tzgg/index.html
+
+  - id: hz_edu
+    name: 杭州市教育局（教师招聘）
+    region: 浙江
+    exam: 教师编
+    url: https://edu.hangzhou.gov.cn/col/col1228921906/index.html
+
+  - id: js_cz_teacher
+    name: 常州人社局（江苏教师编示例源）
+    region: 江苏
+    exam: 教师编
+    url: https://rsj.changzhou.gov.cn/class/IQCNPLQO/
+
+  - id: js_sq_teacher
+    name: 宿迁人社局（江苏教师编示例源）
+    region: 江苏
+    exam: 教师编
+    url: http://sqhrss.suqian.gov.cn/
+
+# ---- 标题含以下关键词的公告，只推给闺蜜B（教师方向） ----
+owner_b_keywords: ["教师", "小学", "中学", "学校", "语文", "教育"]
+# ---- 选调生仅限当年应届，只推给闺蜜A ----
+owner_a_only_keywords: ["选调"]
