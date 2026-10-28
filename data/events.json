@@ -1,0 +1,789 @@
+{
+  "note": "时间线数据基于对2019-2026历年官方公告的核对生成。status: done=已结束 / confirmed=官方已确认 / predicted=按往年规律推算（以官方公告为准）。owner: A=闺蜜A(城乡规划·2027应届), B=闺蜜B(汉语言师范·2026届)",
+  "events": [
+    {
+      "id": "gk2027-notice",
+      "title": "2027国考公告发布",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "region": "全国",
+      "type": "国考",
+      "action": "公告",
+      "start": "2026-10-13",
+      "end": "2026-10-14",
+      "status": "done",
+      "importance": "normal",
+      "link": "http://bm.scs.gov.cn/kl2027",
+      "note": "专题站已开通，招录3.57万人"
+    },
+    {
+      "id": "gk2027-signup",
+      "title": "2027国考报名（闺蜜A已报名完成）",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "region": "全国",
+      "type": "国考",
+      "action": "报名",
+      "start": "2026-10-15",
+      "end": "2026-10-24T23:59",
+      "status": "done",
+      "importance": "normal",
+      "link": "http://bm.scs.gov.cn/kl2027",
+      "note": "注册认证10.14-10.23，资审10.15-10.26"
+    },
+    {
+      "id": "gk2027-pay",
+      "title": "2027国考缴费确认",
+      "owner": [
+        "A"
+      ],
+      "region": "全国",
+      "type": "国考",
+      "action": "缴费",
+      "start": "2026-11-01",
+      "end": "2026-11-06T23:59",
+      "status": "confirmed",
+      "importance": "urgent",
+      "link": "http://bm.scs.gov.cn/kl2027",
+      "note": "不缴费视为自动放弃！报名确认与缴费均在国考专题站"
+    },
+    {
+      "id": "gk2027-ticket",
+      "title": "2027国考准考证打印",
+      "owner": [
+        "A"
+      ],
+      "region": "全国",
+      "type": "国考",
+      "action": "准考证",
+      "start": "2026-11-23",
+      "end": "2026-11-29T23:59",
+      "status": "confirmed",
+      "importance": "high",
+      "link": "http://bm.scs.gov.cn/kl2027",
+      "note": "建议尽早打印，多备几份"
+    },
+    {
+      "id": "gk2027-exam",
+      "title": "2027国考笔试",
+      "owner": [
+        "A"
+      ],
+      "region": "全国",
+      "type": "国考",
+      "action": "笔试",
+      "start": "2026-11-28",
+      "end": "2026-11-29T23:59",
+      "status": "confirmed",
+      "importance": "urgent",
+      "link": "http://bm.scs.gov.cn/kl2027",
+      "note": "11.28下午专业科目（如有）；11.29 上午行测、下午申论"
+    },
+    {
+      "id": "gk2027-score",
+      "title": "2027国考成绩公布",
+      "owner": [
+        "A"
+      ],
+      "region": "全国",
+      "type": "国考",
+      "action": "成绩",
+      "start": "2027-01-10",
+      "end": "2027-01-20",
+      "status": "predicted",
+      "importance": "normal",
+      "link": "http://bm.scs.gov.cn/kl2027",
+      "note": "按往年1月中旬推算"
+    },
+    {
+      "id": "js2027-xuandiao",
+      "title": "2027江苏选调生（应届限定，1208名）",
+      "owner": [
+        "A"
+      ],
+      "region": "江苏",
+      "type": "选调",
+      "action": "报名",
+      "start": "2026-10-14",
+      "end": "2026-11-05T23:59",
+      "status": "predicted",
+      "importance": "high",
+      "link": "http://www.jszzb.gov.cn/",
+      "note": "公告已于10.13发布，仅限2027届应届（闺蜜A符合）；报名截止时间以公告为准，一般公告后10-20天"
+    },
+    {
+      "id": "js2027-notice",
+      "title": "2027江苏省考公告",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "region": "江苏",
+      "type": "省考",
+      "action": "公告",
+      "start": "2026-10-28",
+      "end": "2026-11-08",
+      "status": "predicted",
+      "importance": "urgent",
+      "link": "http://www.jszzb.gov.cn/",
+      "note": "公告日连续4年前移：2023.12.3→2024.11.8→2025.10.31→预计2026.10.30前后；发布后自动抓入公告流"
+    },
+    {
+      "id": "js2027-signup",
+      "title": "2027江苏省考报名（约7天，当天16:00截止）",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "region": "江苏",
+      "type": "省考",
+      "action": "报名",
+      "start": "2026-11-04",
+      "end": "2026-11-10T16:00",
+      "status": "predicted",
+      "importance": "urgent",
+      "link": "https://www.csjgwy.com/",
+      "note": "按2026年度节奏推算（公告后约3天开报）；江苏不参加联考，自主命题A/B/C三类卷"
+    },
+    {
+      "id": "js2027-pay",
+      "title": "2027江苏省考缴费",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "region": "江苏",
+      "type": "省考",
+      "action": "缴费",
+      "start": "2026-11-12",
+      "end": "2026-11-13T16:00",
+      "status": "predicted",
+      "importance": "high",
+      "link": "https://www.csjgwy.com/",
+      "note": "按2026年度：初审通过后1-2天内缴费，另有补报名机制"
+    },
+    {
+      "id": "js2027-ticket",
+      "title": "2027江苏省考准考证打印",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "region": "江苏",
+      "type": "省考",
+      "action": "准考证",
+      "start": "2026-12-03",
+      "end": "2026-12-06T23:59",
+      "status": "predicted",
+      "importance": "high",
+      "link": "https://www.csjgwy.com/",
+      "note": "按2026年度：考前4天开始"
+    },
+    {
+      "id": "js2027-exam",
+      "title": "2027江苏省考笔试",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "region": "江苏",
+      "type": "省考",
+      "action": "笔试",
+      "start": "2026-12-05",
+      "end": "2026-12-06T23:59",
+      "status": "predicted",
+      "importance": "urgent",
+      "link": "https://www.csjgwy.com/",
+      "note": "按往年12月第一个周末推算；行测9:00-11:00，申论14:00-16:30"
+    },
+    {
+      "id": "js2027-score",
+      "title": "2027江苏省考成绩公布",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "region": "江苏",
+      "type": "省考",
+      "action": "成绩",
+      "start": "2027-01-10",
+      "end": "2027-01-20",
+      "status": "predicted",
+      "importance": "normal",
+      "link": "https://www.csjgwy.com/",
+      "note": "按往年1月中旬推算"
+    },
+    {
+      "id": "zj2027-notice",
+      "title": "2027浙江省考公告",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "region": "浙江",
+      "type": "省考",
+      "action": "公告",
+      "start": "2026-11-01",
+      "end": "2026-11-06",
+      "status": "predicted",
+      "importance": "urgent",
+      "link": "https://gwy.zjks.gov.cn/",
+      "note": "按2026年度11.3推算；招录规模参考5712名"
+    },
+    {
+      "id": "zj2027-signup",
+      "title": "2027浙江省考报名",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "region": "浙江",
+      "type": "省考",
+      "action": "报名",
+      "start": "2026-11-06",
+      "end": "2026-11-11T17:00",
+      "status": "predicted",
+      "importance": "urgent",
+      "link": "https://www.csjgwy.com/",
+      "note": "按2026年度：11.6 9:00-11.11 17:00，初审至11.13"
+    },
+    {
+      "id": "zj2027-exam",
+      "title": "2027浙江省考笔试",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "region": "浙江",
+      "type": "省考",
+      "action": "笔试",
+      "start": "2026-12-05",
+      "end": "2026-12-06T23:59",
+      "status": "predicted",
+      "importance": "urgent",
+      "link": "https://gwy.zjks.gov.cn/",
+      "note": "按2026年度12.6-12.7推算"
+    },
+    {
+      "id": "zj2027-score",
+      "title": "2027浙江省考成绩公布",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "region": "浙江",
+      "type": "省考",
+      "action": "成绩",
+      "start": "2027-01-05",
+      "end": "2027-01-15",
+      "status": "predicted",
+      "importance": "normal",
+      "link": "https://gwy.zjks.gov.cn/",
+      "note": "按往年1月上中旬推算"
+    },
+    {
+      "id": "sh2027-notice",
+      "title": "2027上海市考公告",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "region": "上海",
+      "type": "省考",
+      "action": "公告",
+      "start": "2026-10-29",
+      "end": "2026-11-03",
+      "status": "predicted",
+      "importance": "urgent",
+      "link": "https://www.shacs.gov.cn/",
+      "note": "按2026年度10.31推算；招录规模参考2393人"
+    },
+    {
+      "id": "sh2027-signup",
+      "title": "2027上海市考报名（中午12:00截止）",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "region": "上海",
+      "type": "省考",
+      "action": "报名",
+      "start": "2026-11-01",
+      "end": "2026-11-07T12:00",
+      "status": "predicted",
+      "importance": "urgent",
+      "link": "https://bm.shacs.gov.cn/zlxt",
+      "note": "按2026年度：11.1 0:00-11.7 12:00报名，资审至11.7 14:00，缴费11.10-11.12"
+    },
+    {
+      "id": "sh2027-exam",
+      "title": "2027上海市考笔试",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "region": "上海",
+      "type": "省考",
+      "action": "笔试",
+      "start": "2026-12-05",
+      "end": "2026-12-06T23:59",
+      "status": "predicted",
+      "importance": "urgent",
+      "link": "https://bm.shacs.gov.cn/zlxt",
+      "note": "按2026年度12.7推算：申论9:00-11:30、行测13:30-15:30、专业科目16:15-17:15"
+    },
+    {
+      "id": "sh2027-score",
+      "title": "2027上海市考成绩公布",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "region": "上海",
+      "type": "省考",
+      "action": "成绩",
+      "start": "2027-01-05",
+      "end": "2027-01-12",
+      "status": "predicted",
+      "importance": "normal",
+      "link": "https://www.shacs.gov.cn/",
+      "note": "2026年度为1.9公布"
+    },
+    {
+      "id": "ah2027-notice",
+      "title": "2027安徽省考公告",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "region": "安徽",
+      "type": "省考",
+      "action": "公告",
+      "start": "2027-01-13",
+      "end": "2027-01-18",
+      "status": "predicted",
+      "importance": "high",
+      "link": "http://www.apta.gov.cn/",
+      "note": "按2026年度1.15推算；招录规模参考7195名"
+    },
+    {
+      "id": "ah2027-signup",
+      "title": "2027安徽省考报名",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "region": "安徽",
+      "type": "省考",
+      "action": "报名",
+      "start": "2027-01-18",
+      "end": "2027-01-25T18:00",
+      "status": "predicted",
+      "importance": "urgent",
+      "link": "http://www.apta.gov.cn/",
+      "note": "按2026年度：1.19 9:00-1.25 18:00，缴费1.29 12:00前"
+    },
+    {
+      "id": "ah2027-exam",
+      "title": "2027安徽省考笔试（多省联考）",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "region": "安徽",
+      "type": "省考",
+      "action": "笔试",
+      "start": "2027-03-13",
+      "end": "2027-03-14T23:59",
+      "status": "predicted",
+      "importance": "urgent",
+      "link": "http://www.apta.gov.cn/",
+      "note": "3月第二个周末；行测9:00-11:00，申论14:00-16:30"
+    },
+    {
+      "id": "ah2027-score",
+      "title": "2027安徽省考成绩公布",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "region": "安徽",
+      "type": "省考",
+      "action": "成绩",
+      "start": "2027-04-01",
+      "end": "2027-04-10",
+      "status": "predicted",
+      "importance": "normal",
+      "link": "http://www.apta.gov.cn/",
+      "note": "按往年4月初推算"
+    },
+    {
+      "id": "ah2027-sy",
+      "title": "安徽事业单位省直2027",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "region": "安徽",
+      "type": "事业编",
+      "action": "公告",
+      "start": "2027-01-28",
+      "end": "2027-02-06T18:00",
+      "status": "predicted",
+      "importance": "high",
+      "link": "https://hrss.ah.gov.cn/zxzx/ztzl/ahsszsydwgkzp/",
+      "note": "按2026年度：公告1.29、报名2.2-2.6、笔试3.28-29；2026年招898名"
+    },
+    {
+      "id": "sh2027-sy1",
+      "title": "上海事业单位第一批2027",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "region": "上海",
+      "type": "事业编",
+      "action": "公告",
+      "start": "2027-01-26",
+      "end": "2027-02-06",
+      "status": "predicted",
+      "importance": "high",
+      "link": "https://www.shacs.gov.cn/",
+      "note": "随申办APP报名；按2026年度：公告1.28、报名2.2-2.6、笔试3.28"
+    },
+    {
+      "id": "js2027-sy",
+      "title": "江苏事业单位2027",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "region": "江苏",
+      "type": "事业编",
+      "action": "公告",
+      "start": "2027-03-16",
+      "end": "2027-03-25",
+      "status": "predicted",
+      "importance": "high",
+      "link": "https://jshrss.jiangsu.gov.cn/",
+      "note": "按2026年度：公告3.18、报名3.21-3.25、笔试4.18；全省6105人"
+    },
+    {
+      "id": "zj2027-sy1",
+      "title": "浙江事业单位上半年2027",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "region": "浙江",
+      "type": "事业编",
+      "action": "公告",
+      "start": "2027-03-15",
+      "end": "2027-03-25",
+      "status": "predicted",
+      "importance": "high",
+      "link": "https://rlsbt.zj.gov.cn/",
+      "note": "按2026年度：公告3.17、报名3.19-3.25、笔试4.25；下半年还有8月批次"
+    },
+    {
+      "id": "sh2027-sy2",
+      "title": "上海事业单位第二批2027",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "region": "上海",
+      "type": "事业编",
+      "action": "公告",
+      "start": "2027-10-15",
+      "end": "2027-10-23",
+      "status": "predicted",
+      "importance": "normal",
+      "link": "https://www.shacs.gov.cn/",
+      "note": "按2026年度第二批：报名10.19-10.23"
+    },
+    {
+      "id": "js2027-teacher",
+      "title": "江苏各市教师编（全年分散·自动巡检）",
+      "owner": [
+        "B"
+      ],
+      "region": "江苏",
+      "type": "教师编",
+      "action": "公告",
+      "start": "2026-11-01",
+      "end": "2027-06-30",
+      "status": "predicted",
+      "importance": "normal",
+      "link": "https://rsj.changzhou.gov.cn/",
+      "note": "参考2026节奏：溧阳3.5公告/3.28笔试、宿迁5.8公告/5.23笔试；各市人社局+教育局分散发布，公告流自动收录"
+    },
+    {
+      "id": "ah2027-teacher",
+      "title": "安徽中小学教师招聘2027（省统考）",
+      "owner": [
+        "B"
+      ],
+      "region": "安徽",
+      "type": "教师编",
+      "action": "笔试",
+      "start": "2027-02-20",
+      "end": "2027-04-10",
+      "status": "predicted",
+      "importance": "high",
+      "link": "https://jyt.ah.gov.cn/xwzx/tzgg/index.html",
+      "note": "按2026年度：大纲3.12发布、4.4笔试（学科专业知识+教育综合，各120分）；各市县公告2-3月发布"
+    },
+    {
+      "id": "hz2027-teacher",
+      "title": "杭州教师招聘批次2027",
+      "owner": [
+        "B"
+      ],
+      "region": "浙江",
+      "type": "教师编",
+      "action": "笔试",
+      "start": "2027-04-25",
+      "end": "2027-05-24",
+      "status": "predicted",
+      "importance": "high",
+      "link": "https://edu.hangzhou.gov.cn/col/col1228921906/index.html",
+      "note": "按2026年度：4.28公告、5.24笔试；2026年4月批次招171名（事业编）；12月起留意提前批/秋招"
+    },
+    {
+      "id": "sh2027-teacher",
+      "title": "上海各区教师编2027",
+      "owner": [
+        "B"
+      ],
+      "region": "上海",
+      "type": "教师编",
+      "action": "公告",
+      "start": "2027-03-01",
+      "end": "2027-04-30",
+      "status": "predicted",
+      "importance": "normal",
+      "link": "https://www.shacs.gov.cn/",
+      "note": "各区教育局自主发布，3-4月集中；公告流自动收录"
+    },
+    {
+      "id": "auto-js_zzb-3013063841-ev",
+      "title": "【自动发现】关于征求对《江苏省2027年度考试录用公务员专业参考目录（征求意见稿）》意见的公告\n              2720",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "region": "江苏",
+      "type": "省考",
+      "action": "公告",
+      "start": "2026-10-28",
+      "end": "2026-10-28T23:59",
+      "status": "confirmed",
+      "importance": "high",
+      "link": "http://www.jszzb.gov.cn/tzgg/art/2026/art_2cd76f601ab84b7bbb6164e1168a13ff.html",
+      "note": "来源：江苏省委组织部（公务员招录）；报名/笔试时间以公告原文为准"
+    },
+    {
+      "id": "auto-js_zzb-5750653703-ev",
+      "title": "【自动发现】关于江苏省2026年应届优秀大学毕业生选调录用人选报到的公告\n              072026-07",
+      "owner": [
+        "A"
+      ],
+      "region": "江苏",
+      "type": "省考",
+      "action": "公告",
+      "start": "2026-10-28",
+      "end": "2026-10-28T23:59",
+      "status": "confirmed",
+      "importance": "high",
+      "link": "http://www.jszzb.gov.cn/tzgg/art/2026/art_f71ed3576be24a2fb892f092a33a7478.html",
+      "note": "来源：江苏省委组织部（公务员招录）；报名/笔试时间以公告原文为准"
+    },
+    {
+      "id": "auto-ah_edu-9637900092-ev",
+      "title": "【自动发现】安徽省2026年下半年中小学教师资格考试面试公告",
+      "owner": [
+        "B"
+      ],
+      "region": "安徽",
+      "type": "教师编",
+      "action": "公告",
+      "start": "2026-10-27",
+      "end": "2026-10-27T23:59",
+      "status": "confirmed",
+      "importance": "high",
+      "link": "https://jyt.ah.gov.cn/xwzx/tzgg/40804100.html",
+      "note": "来源：安徽省教育厅（教师招聘）；报名/笔试时间以公告原文为准"
+    },
+    {
+      "id": "auto-js_sq_teacher-4145969676-ev",
+      "title": "【自动发现】宿迁市中小学教学研究室公开招聘教研员公告",
+      "owner": [
+        "B"
+      ],
+      "region": "江苏",
+      "type": "教师编",
+      "action": "公告",
+      "start": "2026-10-26",
+      "end": "2026-10-26T23:59",
+      "status": "confirmed",
+      "importance": "high",
+      "link": "http://sqhrss.suqian.gov.cn/rlzyj/rsxx/202610/bc2c777d1d0744cb8f27975478d76ed1.shtml",
+      "note": "来源：宿迁人社局（江苏教师编示例源）；报名/笔试时间以公告原文为准"
+    },
+    {
+      "id": "auto-ah_apta-7621326664-ev",
+      "title": "【自动发现】2026年度安徽省二级造价工程师职业资格考试公告",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "region": "安徽",
+      "type": "省考",
+      "action": "公告",
+      "start": "2026-10-10",
+      "end": "2026-10-10T23:59",
+      "status": "confirmed",
+      "importance": "high",
+      "link": "http://www.apta.gov.cn/ProfTech_NoticeIndex/ProfTechActivityDetail?aid=1691",
+      "note": "来源：安徽人事考试网；报名/笔试时间以公告原文为准"
+    },
+    {
+      "id": "auto-js_sq_teacher-9743821164-ev",
+      "title": "【自动发现】宿迁市2026年部分市属事业单位公开招聘工作人员公告",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "region": "江苏",
+      "type": "教师编",
+      "action": "公告",
+      "start": "2026-10-08",
+      "end": "2026-10-08T23:59",
+      "status": "confirmed",
+      "importance": "high",
+      "link": "http://sqhrss.suqian.gov.cn/rlzyj/zlzp/202608/06038d05efb448adba17012ba7a63e1a.shtml",
+      "note": "来源：宿迁人社局（江苏教师编示例源）；报名/笔试时间以公告原文为准"
+    },
+    {
+      "id": "auto-ah_apta-8418722386-ev",
+      "title": "【自动发现】2026年度安徽省档案专业技术资格考试公告",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "region": "安徽",
+      "type": "省考",
+      "action": "公告",
+      "start": "2026-09-16",
+      "end": "2026-09-16T23:59",
+      "status": "confirmed",
+      "importance": "high",
+      "link": "https://www.ahsdag.org.cn/zckp/517556.html",
+      "note": "来源：安徽人事考试网；报名/笔试时间以公告原文为准"
+    },
+    {
+      "id": "auto-ah_apta-5457795971-ev",
+      "title": "【自动发现】2026年度全省公共法律服务系列律师专业技术资格（初、中级）考试公告",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "region": "安徽",
+      "type": "省考",
+      "action": "公告",
+      "start": "2026-08-24",
+      "end": "2026-08-24T23:59",
+      "status": "confirmed",
+      "importance": "high",
+      "link": "https://sft.ah.gov.cn/zhzx/tzgg/58335431.html",
+      "note": "来源：安徽人事考试网；报名/笔试时间以公告原文为准"
+    },
+    {
+      "id": "auto-ah_apta-5184891170-ev",
+      "title": "【自动发现】2026年度一级注册消防工程师资格考试安徽考区公告",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "region": "安徽",
+      "type": "省考",
+      "action": "公告",
+      "start": "2026-08-21",
+      "end": "2026-08-21T23:59",
+      "status": "confirmed",
+      "importance": "high",
+      "link": "http://www.apta.gov.cn/ProfTech_NoticeIndex/ProfTechActivityDetail?aid=1683",
+      "note": "来源：安徽人事考试网；报名/笔试时间以公告原文为准"
+    },
+    {
+      "id": "auto-ah_apta-138535917-ev",
+      "title": "【自动发现】2026年度全国勘察设计注册工程师执业资格考试安徽考区公告",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "region": "安徽",
+      "type": "省考",
+      "action": "公告",
+      "start": "2026-08-10",
+      "end": "2026-08-10T23:59",
+      "status": "confirmed",
+      "importance": "high",
+      "link": "http://www.apta.gov.cn/ProfTech_NoticeIndex/ProfTechActivityDetail?aid=1678",
+      "note": "来源：安徽人事考试网；报名/笔试时间以公告原文为准"
+    },
+    {
+      "id": "auto-ah_edu-7322177072-ev",
+      "title": "【自动发现】安徽省教育厅关于2026年度直属事业单位公开招聘工作人员体检考察人选递补的公告",
+      "owner": [
+        "B"
+      ],
+      "region": "安徽",
+      "type": "教师编",
+      "action": "公告",
+      "start": "2026-07-30",
+      "end": "2026-07-30T23:59",
+      "status": "confirmed",
+      "importance": "high",
+      "link": "https://jyt.ah.gov.cn/xwzx/tzgg/40796146.html",
+      "note": "来源：安徽省教育厅（教师招聘）；报名/笔试时间以公告原文为准"
+    },
+    {
+      "id": "auto-ah_edu-1438753057-ev",
+      "title": "【自动发现】安徽省2026年农村义务教育阶段学校教师特设岗位计划招聘公告",
+      "owner": [
+        "B"
+      ],
+      "region": "安徽",
+      "type": "教师编",
+      "action": "公告",
+      "start": "2026-06-02",
+      "end": "2026-06-02T23:59",
+      "status": "confirmed",
+      "importance": "high",
+      "link": "https://jyt.ah.gov.cn/xwzx/tzgg/40792015.html",
+      "note": "来源：安徽省教育厅（教师招聘）；报名/笔试时间以公告原文为准"
+    },
+    {
+      "id": "auto-ah_edu-6826338804-ev",
+      "title": "【自动发现】2026年度安徽省教育厅直属事业单位公开招聘工作人员考试最终成绩及体检考察人选公告",
+      "owner": [
+        "B"
+      ],
+      "region": "安徽",
+      "type": "教师编",
+      "action": "公告",
+      "start": "2026-06-02",
+      "end": "2026-06-02T23:59",
+      "status": "confirmed",
+      "importance": "high",
+      "link": "https://jyt.ah.gov.cn/xwzx/tzgg/40791997.html",
+      "note": "来源：安徽省教育厅（教师招聘）；报名/笔试时间以公告原文为准"
+    }
+  ]
+}
