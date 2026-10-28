@@ -1,0 +1,1062 @@
+{
+  "note": "公告流：本地预置部分为调研核实的官方入口；部署后由脚本每4小时自动巡检官网，新公告自动加入并推送提醒",
+  "announcements": [
+    {
+      "id": "auto-ah_apta-3986991051",
+      "title": "事业单位公开招聘违纪违规行为处理规定",
+      "url": "http://www.apta.gov.cn/Information/LawsDetail?lid=13",
+      "date": "2026-10-28",
+      "region": "安徽",
+      "exam_type": "省考",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "安徽人事考试网"
+    },
+    {
+      "id": "auto-ah_apta-223364483",
+      "title": "资格考试报名证明事项告知承诺制",
+      "url": "http://www.cpta.com.cn/promise.html",
+      "date": "2026-10-28",
+      "region": "安徽",
+      "exam_type": "省考",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "安徽人事考试网"
+    },
+    {
+      "id": "auto-js_rss-7455281075",
+      "title": "行政许可/行政处罚公示",
+      "url": "https://rs.jshrss.jiangsu.gov.cn/index/?params=3&type=gsgg",
+      "date": "2026-10-28",
+      "region": "江苏",
+      "exam_type": "事业编",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "江苏人社厅（事业编/教师编）"
+    },
+    {
+      "id": "auto-js_rss-8564878008",
+      "title": "江苏人事人才公共服务网\r\n                                                                档案管理  |  人事代理  |  公开招聘",
+      "url": "http://jshrss.jiangsu.gov.cn/col/col57142/index.html",
+      "date": "2026-10-28",
+      "region": "江苏",
+      "exam_type": "事业编",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "江苏人社厅（事业编/教师编）"
+    },
+    {
+      "id": "auto-js_rss-4451718312",
+      "title": "全省公办技工院校专项招聘",
+      "url": "https://jshrss.jiangsu.gov.cn/col/col91395/index.html",
+      "date": "2026-10-28",
+      "region": "江苏",
+      "exam_type": "事业编",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "江苏人社厅（事业编/教师编）"
+    },
+    {
+      "id": "auto-js_rss-9070671690",
+      "title": "全省公办技工院校公开招聘",
+      "url": "http://jshrss.jiangsu.gov.cn/col/col93485/index.html",
+      "date": "2026-10-28",
+      "region": "江苏",
+      "exam_type": "事业编",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "江苏人社厅（事业编/教师编）"
+    },
+    {
+      "id": "auto-js_rss-9185815910",
+      "title": "2026年省属事业单位招聘",
+      "url": "http://jshrss.jiangsu.gov.cn/col/col93339/index.html",
+      "date": "2026-10-28",
+      "region": "江苏",
+      "exam_type": "事业编",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "江苏人社厅（事业编/教师编）"
+    },
+    {
+      "id": "auto-js_zzb-5474429210",
+      "title": "江苏省2027年应届优秀大学毕业生选调工作公告\n              132026-10",
+      "url": "http://www.jszzb.gov.cn/tzgg/art/2026/art_06122f61eef24054b136a55aa116fc0d.html",
+      "date": "2026-10-28",
+      "region": "江苏",
+      "exam_type": "省考",
+      "owner": [
+        "A"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "江苏省委组织部（公务员招录）"
+    },
+    {
+      "id": "auto-js_zzb-3013063841",
+      "title": "关于征求对《江苏省2027年度考试录用公务员专业参考目录（征求意见稿）》意见的公告\n              272026-07",
+      "url": "http://www.jszzb.gov.cn/tzgg/art/2026/art_2cd76f601ab84b7bbb6164e1168a13ff.html",
+      "date": "2026-10-28",
+      "region": "江苏",
+      "exam_type": "省考",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "江苏省委组织部（公务员招录）"
+    },
+    {
+      "id": "auto-js_zzb-5750653703",
+      "title": "关于江苏省2026年应届优秀大学毕业生选调录用人选报到的公告\n              072026-07",
+      "url": "http://www.jszzb.gov.cn/tzgg/art/2026/art_f71ed3576be24a2fb892f092a33a7478.html",
+      "date": "2026-10-28",
+      "region": "江苏",
+      "exam_type": "省考",
+      "owner": [
+        "A"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "江苏省委组织部（公务员招录）"
+    },
+    {
+      "id": "auto-js_zzb-1719191183",
+      "title": "江苏省省管领导干部任职前公示\n              162026-10",
+      "url": "http://www.jszzb.gov.cn/gbrm/art/2026/art_91e2df72acb446cc847fffef69ae8c4d.html",
+      "date": "2026-10-28",
+      "region": "江苏",
+      "exam_type": "省考",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "江苏省委组织部（公务员招录）"
+    },
+    {
+      "id": "auto-ah_xf-5534914850",
+      "title": "安徽省社科联2026年度公开遴选公务员面试、体检..",
+      "url": "https://www.ahxf.gov.cn/Home/Content/1193920?ClassId=6882",
+      "date": "2026-10-28",
+      "region": "安徽",
+      "exam_type": "省考",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "安徽先锋网"
+    },
+    {
+      "id": "auto-ah_xf-9141858082",
+      "title": "安徽省司法厅2026年度公开遴选公务员加试、面试..",
+      "url": "https://www.ahxf.gov.cn/Home/Content/1193918?ClassId=6882",
+      "date": "2026-10-28",
+      "region": "安徽",
+      "exam_type": "省考",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "安徽先锋网"
+    },
+    {
+      "id": "auto-ah_xf-135629564",
+      "title": "安徽省总工会2026年度公开遴选公务员面试、体检考察..",
+      "url": "https://www.ahxf.gov.cn/Home/Content/1193870?ClassId=6882",
+      "date": "2026-10-28",
+      "region": "安徽",
+      "exam_type": "省考",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "安徽先锋网"
+    },
+    {
+      "id": "auto-ah_xf-7340293076",
+      "title": "安徽省国防动员办公室2026年度公开遴选公务员面试、..",
+      "url": "https://www.ahxf.gov.cn/Home/Content/1193858?ClassId=6882",
+      "date": "2026-10-28",
+      "region": "安徽",
+      "exam_type": "省考",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "安徽先锋网"
+    },
+    {
+      "id": "auto-ah_xf-7209974944",
+      "title": "安徽省高级人民法院2026年度公开遴选公务员面试、体..",
+      "url": "https://www.ahxf.gov.cn/Home/Content/1193823?ClassId=6882",
+      "date": "2026-10-28",
+      "region": "安徽",
+      "exam_type": "省考",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "安徽先锋网"
+    },
+    {
+      "id": "auto-ah_xf-409527435",
+      "title": "中共安徽省委政法委员会2026年度公开遴选公务员面试..",
+      "url": "https://www.ahxf.gov.cn/Home/Content/1193819?ClassId=6882",
+      "date": "2026-10-28",
+      "region": "安徽",
+      "exam_type": "省考",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "安徽先锋网"
+    },
+    {
+      "id": "auto-ah_xf-310997688",
+      "title": "安徽省公安厅2026年度公开遴选公务员面试、体检考察..",
+      "url": "https://www.ahxf.gov.cn/Home/Content/1193818?ClassId=6882",
+      "date": "2026-10-28",
+      "region": "安徽",
+      "exam_type": "省考",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "安徽先锋网"
+    },
+    {
+      "id": "auto-ah_xf-8165938006",
+      "title": "安徽省工业和信息化厅2026年度公开遴选公务员面试、..",
+      "url": "https://www.ahxf.gov.cn/Home/Content/1193817?ClassId=6882",
+      "date": "2026-10-28",
+      "region": "安徽",
+      "exam_type": "省考",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "安徽先锋网"
+    },
+    {
+      "id": "auto-ah_xf-3675263349",
+      "title": "安徽省检察院2026年度公开遴选公务员面试、体检考察..",
+      "url": "https://www.ahxf.gov.cn/Home/Content/1193782?ClassId=6882",
+      "date": "2026-10-28",
+      "region": "安徽",
+      "exam_type": "省考",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "安徽先锋网"
+    },
+    {
+      "id": "auto-ah_xf-7392267999",
+      "title": "安徽省政协办公厅2026年度公开遴选公务员加试、面试..",
+      "url": "https://www.ahxf.gov.cn/Home/Content/1193777?ClassId=6882",
+      "date": "2026-10-28",
+      "region": "安徽",
+      "exam_type": "省考",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "安徽先锋网"
+    },
+    {
+      "id": "auto-ah_xf-2226675579",
+      "title": "安徽省能源局2026年度公开遴选公务员面试、体检考察..",
+      "url": "https://www.ahxf.gov.cn/Home/Content/1193765?ClassId=6882",
+      "date": "2026-10-28",
+      "region": "安徽",
+      "exam_type": "省考",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "安徽先锋网"
+    },
+    {
+      "id": "auto-ah_xf-149184156",
+      "title": "安徽省商务厅2026年度公开遴选公务员面试、体检考察..",
+      "url": "https://www.ahxf.gov.cn/Home/Content/1193763?ClassId=6882",
+      "date": "2026-10-28",
+      "region": "安徽",
+      "exam_type": "省考",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "安徽先锋网"
+    },
+    {
+      "id": "auto-ah_xf-6917022041",
+      "title": "共青团安徽省委2026年度公开遴选公务员面试、体检考..",
+      "url": "https://www.ahxf.gov.cn/Home/Content/1193756?ClassId=6882",
+      "date": "2026-10-28",
+      "region": "安徽",
+      "exam_type": "省考",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "安徽先锋网"
+    },
+    {
+      "id": "auto-ah_xf-8005157723",
+      "title": "“百个专家团队下基层”活动需求项目发布公告",
+      "url": "https://www.ahxf.gov.cn/Home/Content/1184147?ClassId=236",
+      "date": "2026-10-28",
+      "region": "安徽",
+      "exam_type": "省考",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "安徽先锋网"
+    },
+    {
+      "id": "auto-ah_xf-361134808",
+      "title": "青阳县：“育管用”全链条发力助推选调生成长成才",
+      "url": "https://www.ahxf.gov.cn/Home/Content/1193654?ClassId=6715",
+      "date": "2026-10-28",
+      "region": "安徽",
+      "exam_type": "省考",
+      "owner": [
+        "A"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "安徽先锋网"
+    },
+    {
+      "id": "auto-zj_rlsbt-4343311684",
+      "title": "事业单位公开招聘",
+      "url": "https://rlsbt.zj.gov.cn/col/col1443681/index.html",
+      "date": "2026-10-28",
+      "region": "浙江",
+      "exam_type": "事业编",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "浙江人社厅（事业编）"
+    },
+    {
+      "id": "auto-ah_edu-3137047787",
+      "title": "关于安徽省2026年“素提计划”省级配套项目承训基地遴选结果的公示",
+      "url": "https://jyt.ah.gov.cn/xwzx/tzgg/40804349.html",
+      "date": "2026-10-27",
+      "region": "安徽",
+      "exam_type": "教师编",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "安徽省教育厅（教师招聘）"
+    },
+    {
+      "id": "auto-ah_edu-9637900092",
+      "title": "安徽省2026年下半年中小学教师资格考试面试公告",
+      "url": "https://jyt.ah.gov.cn/xwzx/tzgg/40804100.html",
+      "date": "2026-10-27",
+      "region": "安徽",
+      "exam_type": "教师编",
+      "owner": [
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "安徽省教育厅（教师招聘）"
+    },
+    {
+      "id": "auto-js_rss-567362588",
+      "title": "我省公布2026年度社会保险缴费基数2026-10-08",
+      "url": "https://jshrss.jiangsu.gov.cn/art/2026/10/8/art_78497_11838875.html",
+      "date": "2026-10-26",
+      "region": "江苏",
+      "exam_type": "事业编",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "江苏人社厅（事业编/教师编）"
+    },
+    {
+      "id": "auto-js_sq_teacher-4145969676",
+      "title": "宿迁市中小学教学研究室公开招聘教研员公告",
+      "url": "http://sqhrss.suqian.gov.cn/rlzyj/rsxx/202610/bc2c777d1d0744cb8f27975478d76ed1.shtml",
+      "date": "2026-10-26",
+      "region": "江苏",
+      "exam_type": "教师编",
+      "owner": [
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "宿迁人社局（江苏教师编示例源）"
+    },
+    {
+      "id": "auto-js_sq_teacher-1178409571",
+      "title": "关于2026年江苏省“最美工匠”宿迁市推荐人员公示",
+      "url": "http://sqhrss.suqian.gov.cn/rlzyj/zdgz/202610/9f9b7581e4234fd9ae3cdeff23d72214.shtml",
+      "date": "2026-10-26",
+      "region": "江苏",
+      "exam_type": "教师编",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "宿迁人社局（江苏教师编示例源）"
+    },
+    {
+      "id": "auto-js_sq_teacher-4694271313",
+      "title": "关于省构建和谐劳动关系工作先进集体、先进个人拟推荐对象的公示",
+      "url": "http://sqhrss.suqian.gov.cn/rlzyj/zdgz/202610/210ad4380fc7462fa7f41305ca45caae.shtml",
+      "date": "2026-10-26",
+      "region": "江苏",
+      "exam_type": "教师编",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "宿迁人社局（江苏教师编示例源）"
+    },
+    {
+      "id": "auto-js_sq_teacher-9154805307",
+      "title": "宿迁市市本级2027届高校毕业生一次性求职补贴（第一批）公示",
+      "url": "http://sqhrss.suqian.gov.cn/rlzyj/czxx/202610/29401201cae947f8a3258b0e7545da5c.shtml",
+      "date": "2026-10-26",
+      "region": "江苏",
+      "exam_type": "教师编",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "宿迁人社局（江苏教师编示例源）"
+    },
+    {
+      "id": "auto-js_sq_teacher-8424082855",
+      "title": "沭阳县企业特殊工种提前退休人员情况公示",
+      "url": "http://sqhrss.suqian.gov.cn/rlzyj/zdgz/202610/00d918a509a04fb0817e8bb0fb178795.shtml",
+      "date": "2026-10-23",
+      "region": "江苏",
+      "exam_type": "教师编",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "宿迁人社局（江苏教师编示例源）"
+    },
+    {
+      "id": "auto-ah_edu-3569561971",
+      "title": "关于安徽省中小学幼儿园教师和教育管理干部省级培训基地（2027-2031年）遴选结果的公示",
+      "url": "https://jyt.ah.gov.cn/xwzx/tzgg/40803923.html",
+      "date": "2026-10-23",
+      "region": "安徽",
+      "exam_type": "教师编",
+      "owner": [
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "安徽省教育厅（教师招聘）"
+    },
+    {
+      "id": "auto-js_sq_teacher-563050536",
+      "title": "“金秋十月·就在宿迁”招聘活动举行",
+      "url": "http://sqhrss.suqian.gov.cn/rlzyj/mtjj/202610/3c4d6dc8be1a4332b56e4cf3eec06524.shtml",
+      "date": "2026-10-19",
+      "region": "江苏",
+      "exam_type": "教师编",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "宿迁人社局（江苏教师编示例源）"
+    },
+    {
+      "id": "auto-js_sq_teacher-7002443319",
+      "title": "宿迁市2026年部分市属事业单位公开招聘工作人员拟聘用人员名单公示",
+      "url": "http://sqhrss.suqian.gov.cn/rlzyj/rsxx/202610/9153cb20b0fb4eec952a460fb776bcb4.shtml",
+      "date": "2026-10-19",
+      "region": "江苏",
+      "exam_type": "教师编",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "宿迁人社局（江苏教师编示例源）"
+    },
+    {
+      "id": "auto-js_sq_teacher-4942102164",
+      "title": "2026年度企业年金双随机检查名单公示",
+      "url": "http://sqhrss.suqian.gov.cn/rlzyj/zdgz/202610/4035e902a4e04cc6ba405b079e1ca689.shtml",
+      "date": "2026-10-19",
+      "region": "江苏",
+      "exam_type": "教师编",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "宿迁人社局（江苏教师编示例源）"
+    },
+    {
+      "id": "auto-js_sq_teacher-6938004177",
+      "title": "宿迁市市本级8月青年就业见习补贴拟发放名单公示",
+      "url": "http://sqhrss.suqian.gov.cn/rlzyj/czxx/202610/085cc571a2724a7aa94d802b26cd1336.shtml",
+      "date": "2026-10-16",
+      "region": "江苏",
+      "exam_type": "教师编",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "宿迁人社局（江苏教师编示例源）"
+    },
+    {
+      "id": "auto-ah_edu-9741000249",
+      "title": "关于2026年数字化美育资源征集工作省级遴选推荐结果的公示",
+      "url": "https://jyt.ah.gov.cn/xwzx/tzgg/40802651.html",
+      "date": "2026-10-13",
+      "region": "安徽",
+      "exam_type": "教师编",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "安徽省教育厅（教师招聘）"
+    },
+    {
+      "id": "auto-ah_apta-7621326664",
+      "title": "2026年度安徽省二级造价工程师职业资格考试公告",
+      "url": "http://www.apta.gov.cn/ProfTech_NoticeIndex/ProfTechActivityDetail?aid=1691",
+      "date": "2026-10-10",
+      "region": "安徽",
+      "exam_type": "省考",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "安徽人事考试网"
+    },
+    {
+      "id": "auto-js_sq_teacher-5091598008",
+      "title": "宿迁市2026年部分市属事业单位公开招聘工作人员笔试成绩查询和资格复审...",
+      "url": "http://sqhrss.suqian.gov.cn/rlzyj/zlzp/202609/e1f57d947e79456d85f9e2d02b6c432a.shtml",
+      "date": "2026-10-10",
+      "region": "江苏",
+      "exam_type": "教师编",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "宿迁人社局（江苏教师编示例源）"
+    },
+    {
+      "id": "auto-js_sq_teacher-9743821164",
+      "title": "宿迁市2026年部分市属事业单位公开招聘工作人员公告",
+      "url": "http://sqhrss.suqian.gov.cn/rlzyj/zlzp/202608/06038d05efb448adba17012ba7a63e1a.shtml",
+      "date": "2026-10-08",
+      "region": "江苏",
+      "exam_type": "教师编",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "宿迁人社局（江苏教师编示例源）"
+    },
+    {
+      "id": "auto-ah_edu-7908299080",
+      "title": "安徽省2026年中小学教师资格定期注册公告",
+      "url": "https://jyt.ah.gov.cn/xwzx/tzgg/40802047.html",
+      "date": "2026-10-08",
+      "region": "安徽",
+      "exam_type": "教师编",
+      "owner": [
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "安徽省教育厅（教师招聘）"
+    },
+    {
+      "id": "auto-ah_edu-4742703953",
+      "title": "2026年教师教育师资出国访学研修项目拟推荐人选公示",
+      "url": "https://jyt.ah.gov.cn/xwzx/tzgg/40801566.html",
+      "date": "2026-09-28",
+      "region": "安徽",
+      "exam_type": "教师编",
+      "owner": [
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "安徽省教育厅（教师招聘）"
+    },
+    {
+      "id": "auto-ah_edu-3340299991",
+      "title": "关于教育部高校体育风采主题宣传省级遴选推荐结果的公示",
+      "url": "https://jyt.ah.gov.cn/xwzx/tzgg/40801458.html",
+      "date": "2026-09-22",
+      "region": "安徽",
+      "exam_type": "教师编",
+      "owner": [
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "安徽省教育厅（教师招聘）"
+    },
+    {
+      "id": "auto-ah_edu-5039559500",
+      "title": "关于安徽省第十届校园读书创作活动拟获奖名单的公示",
+      "url": "https://jyt.ah.gov.cn/xwzx/tzgg/40800642.html",
+      "date": "2026-09-18",
+      "region": "安徽",
+      "exam_type": "教师编",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "安徽省教育厅（教师招聘）"
+    },
+    {
+      "id": "auto-ah_apta-8418722386",
+      "title": "2026年度安徽省档案专业技术资格考试公告",
+      "url": "https://www.ahsdag.org.cn/zckp/517556.html",
+      "date": "2026-09-16",
+      "region": "安徽",
+      "exam_type": "省考",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "安徽人事考试网"
+    },
+    {
+      "id": "auto-ah_edu-9470272349",
+      "title": "教育系统2026年省“年度法治人物”拟推荐对象公示",
+      "url": "https://jyt.ah.gov.cn/xwzx/tzgg/40800444.html",
+      "date": "2026-09-14",
+      "region": "安徽",
+      "exam_type": "教师编",
+      "owner": [
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "安徽省教育厅（教师招聘）"
+    },
+    {
+      "id": "auto-ah_edu-7836191043",
+      "title": "安徽省2026年下半年中小学教师资格认定公告",
+      "url": "https://jyt.ah.gov.cn/xwzx/tzgg/40799525.html",
+      "date": "2026-09-11",
+      "region": "安徽",
+      "exam_type": "教师编",
+      "owner": [
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "安徽省教育厅（教师招聘）"
+    },
+    {
+      "id": "auto-ah_edu-9432572811",
+      "title": "关于第八届汉字书写大赛安徽省赛获奖名单及第八届诵写讲大赛安徽省赛优秀组织奖名单的公示",
+      "url": "https://jyt.ah.gov.cn/xwzx/tzgg/40798923.html",
+      "date": "2026-09-04",
+      "region": "安徽",
+      "exam_type": "教师编",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "安徽省教育厅（教师招聘）"
+    },
+    {
+      "id": "auto-js_rss-4295990709",
+      "title": "省人力资源社会保障厅关于明确参加经济系列高级职称评审考试成绩使用...2026-08-14",
+      "url": "https://jshrss.jiangsu.gov.cn/art/2026/8/14/art_77278_11817590.html",
+      "date": "2026-09-01",
+      "region": "江苏",
+      "exam_type": "事业编",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "江苏人社厅（事业编/教师编）"
+    },
+    {
+      "id": "auto-ah_edu-4694606025",
+      "title": "安徽省教育厅直属中职学校2026年度公开招聘拟聘人员公示",
+      "url": "https://jyt.ah.gov.cn/xwzx/tzgg/40798085.html",
+      "date": "2026-08-28",
+      "region": "安徽",
+      "exam_type": "教师编",
+      "owner": [
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "安徽省教育厅（教师招聘）"
+    },
+    {
+      "id": "auto-js_rss-4882260932",
+      "title": "省人力资源社会保障厅关于印发江苏省用人单位和人力资源服务机构招聘...2026-08-26",
+      "url": "https://jshrss.jiangsu.gov.cn/art/2026/8/26/art_77279_11820915.html",
+      "date": "2026-08-26",
+      "region": "江苏",
+      "exam_type": "事业编",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "江苏人社厅（事业编/教师编）"
+    },
+    {
+      "id": "auto-ah_apta-5457795971",
+      "title": "2026年度全省公共法律服务系列律师专业技术资格（初、中级）考试公告",
+      "url": "https://sft.ah.gov.cn/zhzx/tzgg/58335431.html",
+      "date": "2026-08-24",
+      "region": "安徽",
+      "exam_type": "省考",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "安徽人事考试网"
+    },
+    {
+      "id": "auto-ah_apta-5184891170",
+      "title": "2026年度一级注册消防工程师资格考试安徽考区公告",
+      "url": "http://www.apta.gov.cn/ProfTech_NoticeIndex/ProfTechActivityDetail?aid=1683",
+      "date": "2026-08-21",
+      "region": "安徽",
+      "exam_type": "省考",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "安徽人事考试网"
+    },
+    {
+      "id": "auto-ah_edu-3397938136",
+      "title": "关于安徽省中小学生器乐专项展演活动评选结果的公示",
+      "url": "https://jyt.ah.gov.cn/xwzx/tzgg/40797163.html",
+      "date": "2026-08-17",
+      "region": "安徽",
+      "exam_type": "教师编",
+      "owner": [
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "安徽省教育厅（教师招聘）"
+    },
+    {
+      "id": "auto-ah_apta-138535917",
+      "title": "2026年度全国勘察设计注册工程师执业资格考试安徽考区公告",
+      "url": "http://www.apta.gov.cn/ProfTech_NoticeIndex/ProfTechActivityDetail?aid=1678",
+      "date": "2026-08-10",
+      "region": "安徽",
+      "exam_type": "省考",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "安徽人事考试网"
+    },
+    {
+      "id": "auto-ah_edu-8201287698",
+      "title": "安徽省教育厅直属事业单位2026年度公开招聘拟聘人员公示",
+      "url": "https://jyt.ah.gov.cn/xwzx/tzgg/40797127.html",
+      "date": "2026-08-03",
+      "region": "安徽",
+      "exam_type": "教师编",
+      "owner": [
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "安徽省教育厅（教师招聘）"
+    },
+    {
+      "id": "auto-ah_edu-4463779974",
+      "title": "关于第七批省级非物质文化遗产代表性项目推荐情况的公示",
+      "url": "https://jyt.ah.gov.cn/xwzx/tzgg/40797067.html",
+      "date": "2026-08-03",
+      "region": "安徽",
+      "exam_type": "教师编",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "安徽省教育厅（教师招聘）"
+    },
+    {
+      "id": "auto-ah_edu-4079907214",
+      "title": "关于第八届经典诵读大赛安徽省赛获奖名单的公示",
+      "url": "https://jyt.ah.gov.cn/xwzx/tzgg/40797006.html",
+      "date": "2026-07-31",
+      "region": "安徽",
+      "exam_type": "教师编",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "安徽省教育厅（教师招聘）"
+    },
+    {
+      "id": "auto-ah_edu-7322177072",
+      "title": "安徽省教育厅关于2026年度直属事业单位公开招聘工作人员体检考察人选递补的公告",
+      "url": "https://jyt.ah.gov.cn/xwzx/tzgg/40796146.html",
+      "date": "2026-07-30",
+      "region": "安徽",
+      "exam_type": "教师编",
+      "owner": [
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "安徽省教育厅（教师招聘）"
+    },
+    {
+      "id": "auto-ah_edu-2023365688",
+      "title": "2026年度教育部门权责清单“全省一单”及全省公共服务清单调整情况公示",
+      "url": "https://jyt.ah.gov.cn/xwzx/tzgg/40795992.html",
+      "date": "2026-07-20",
+      "region": "安徽",
+      "exam_type": "教师编",
+      "owner": [
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "安徽省教育厅（教师招聘）"
+    },
+    {
+      "id": "auto-ah_edu-8531148393",
+      "title": "安徽省教育厅关于2026年安徽省属高校录取通知书签发人名单公告",
+      "url": "https://jyt.ah.gov.cn/xwzx/tzgg/40795561.html",
+      "date": "2026-07-17",
+      "region": "安徽",
+      "exam_type": "教师编",
+      "owner": [
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "安徽省教育厅（教师招聘）"
+    },
+    {
+      "id": "auto-ah_edu-2831872984",
+      "title": "安徽省教育厅高清视频会议系统专网和托管服务采购单一来源公示",
+      "url": "https://jyt.ah.gov.cn/xwzx/tzgg/40794259.html",
+      "date": "2026-07-13",
+      "region": "安徽",
+      "exam_type": "教师编",
+      "owner": [
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "安徽省教育厅（教师招聘）"
+    },
+    {
+      "id": "auto-ah_edu-839936508",
+      "title": "安徽省2026年中西部欠发达地区优秀教师定向培养计划招生公告",
+      "url": "https://jyt.ah.gov.cn/xwzx/tzgg/40793871.html",
+      "date": "2026-06-30",
+      "region": "安徽",
+      "exam_type": "教师编",
+      "owner": [
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "安徽省教育厅（教师招聘）"
+    },
+    {
+      "id": "auto-ah_edu-9427676546",
+      "title": "安徽省2026年义务教育教辅材料评议公告",
+      "url": "https://jyt.ah.gov.cn/xwzx/tzgg/40792404.html",
+      "date": "2026-06-24",
+      "region": "安徽",
+      "exam_type": "教师编",
+      "owner": [
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "安徽省教育厅（教师招聘）"
+    },
+    {
+      "id": "auto-ah_edu-1438753057",
+      "title": "安徽省2026年农村义务教育阶段学校教师特设岗位计划招聘公告",
+      "url": "https://jyt.ah.gov.cn/xwzx/tzgg/40792015.html",
+      "date": "2026-06-02",
+      "region": "安徽",
+      "exam_type": "教师编",
+      "owner": [
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "安徽省教育厅（教师招聘）"
+    },
+    {
+      "id": "auto-ah_edu-6826338804",
+      "title": "2026年度安徽省教育厅直属事业单位公开招聘工作人员考试最终成绩及体检考察人选公告",
+      "url": "https://jyt.ah.gov.cn/xwzx/tzgg/40791997.html",
+      "date": "2026-06-02",
+      "region": "安徽",
+      "exam_type": "教师编",
+      "owner": [
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "安徽省教育厅（教师招聘）"
+    },
+    {
+      "id": "auto-ah_edu-1510294501",
+      "title": "短信业务服务采购询价结果公示",
+      "url": "https://jyt.ah.gov.cn/xwzx/tzgg/40791331.html",
+      "date": "2026-06-02",
+      "region": "安徽",
+      "exam_type": "教师编",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "安徽省教育厅（教师招聘）"
+    },
+    {
+      "id": "auto-ah_edu-9086761859",
+      "title": "安徽省教育厅2026至2029年招标采购代理服务机构比选公告",
+      "url": "https://jyt.ah.gov.cn/xwzx/tzgg/40790873.html",
+      "date": "2026-05-27",
+      "region": "安徽",
+      "exam_type": "教师编",
+      "owner": [
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "安徽省教育厅（教师招聘）"
+    },
+    {
+      "id": "auto-js_cz_teacher-8587817401",
+      "title": "工会工作者成绩查询",
+      "url": "https://rsj.changzhou.gov.cn/index.php?m=letter&c=index&a=show&id=67857",
+      "date": "2026-05-22",
+      "region": "江苏",
+      "exam_type": "教师编",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:46 收录",
+      "source": "常州人社局（江苏教师编示例源）"
+    },
+    {
+      "id": "ann-gk2027",
+      "title": "中央机关及其直属机构2027年度考试录用公务员公告",
+      "url": "http://bm.scs.gov.cn/kl2027",
+      "date": "2026-10-13",
+      "region": "全国",
+      "exam_type": "国考",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:42 收录",
+      "source": "国家公务员局专题站"
+    },
+    {
+      "id": "ann-js-xd",
+      "title": "江苏省2027年应届优秀大学毕业生选调公告（1208名，仅限应届）",
+      "url": "http://www.jszzb.gov.cn/",
+      "date": "2026-10-13",
+      "region": "江苏",
+      "exam_type": "选调",
+      "owner": [
+        "A"
+      ],
+      "discovered_display": "2026年10月28日 13:42 收录",
+      "source": "中共江苏省委组织部"
+    },
+    {
+      "id": "ann-ah-teacher-2026",
+      "title": "安徽省2026年中小学教师公开招聘省命题考试笔试时间及笔试大纲公告",
+      "url": "https://jyt.ah.gov.cn/xwzx/tzgg/40783870.html",
+      "date": "2026-03-12",
+      "region": "安徽",
+      "exam_type": "教师编",
+      "owner": [
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:42 收录",
+      "source": "安徽省教育厅",
+      "is_reference": true,
+      "ref_note": "2026年度公告，用于了解安徽教师编节奏：大纲3月发布、4月初笔试"
+    },
+    {
+      "id": "ann-zj-sy-2026",
+      "title": "浙江省省属事业单位2026年上半年集中公开招聘公告（664人）",
+      "url": "https://rlsbt.zj.gov.cn/col/col1229743683/art/2026/art_aa250f574a114936b87ea93a5ca2c6b5.html",
+      "date": "2026-03-17",
+      "region": "浙江",
+      "exam_type": "事业编",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年10月28日 13:42 收录",
+      "source": "浙江省人力资源和社会保障厅",
+      "is_reference": true,
+      "ref_note": "2026年度公告，用于了解浙江事业编节奏：3月中公告、4月下旬笔试"
+    }
+  ]
+}
