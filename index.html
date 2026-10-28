@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>公考看板 · 江浙沪皖</title>
+<meta name="description" content="江浙沪皖 国考/省考/事业编/教师编 信息自动看板">
+<meta name="theme-color" content="#4f46e5">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" href="icons/icon-192.png">
+<style>
+:root{
+  --c1:#4f46e5;--c2:#9333ea;--bg:#f4f5fb;--card:#fff;--ink:#1e293b;--muted:#64748b;
+  --red:#dc2626;--red-bg:#fef2f2;--orange:#ea580c;--orange-bg:#fff7ed;
+  --blue:#2563eb;--blue-bg:#eff6ff;--green:#059669;--green-bg:#ecfdf5;--line:#e2e8f0;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{background:var(--bg);color:var(--ink);font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;font-size:15px;line-height:1.55;padding-bottom:40px}
+.wrap{max-width:560px;margin:0 auto;padding:0 12px}
+header.top{background:linear-gradient(135deg,var(--c1),var(--c2));color:#fff;padding:14px 12px 16px}
+header.top .wrap{padding:0 12px}
+.brand{font-size:19px;font-weight:700}
+.brand .sub{font-size:12px;font-weight:400;opacity:.85;display:block;margin-top:2px}
+.updated{margin-top:8px;font-size:14px;font-weight:600;background:rgba(255,255,255,.18);border-radius:10px;padding:7px 10px;display:inline-block}
+.meta-line{margin-top:6px;font-size:12px;opacity:.85}
+section{margin-top:14px}
+h2{font-size:15px;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.card{background:var(--card);border-radius:14px;padding:12px 14px;box-shadow:0 1px 4px rgba(15,23,42,.06);margin-bottom:10px}
+/* 提醒 */
+.alert{border-radius:14px;padding:11px 13px;margin-bottom:9px;border:1.5px solid var(--line);background:var(--card);display:flex;gap:10px;align-items:flex-start}
+.alert .ico{font-size:22px;line-height:1.2}
+.alert .t{font-weight:600;font-size:14.5px}
+.alert .d{font-size:12.5px;color:var(--muted);margin-top:2px}
+.alert .cd{margin-top:5px;font-size:12.5px;font-weight:700}
+.alert a.btn{margin-left:auto;flex-shrink:0;font-size:12.5px;color:#fff;background:var(--c1);text-decoration:none;padding:6px 10px;border-radius:8px;white-space:nowrap;align-self:center}
+.alert.lv-red{background:var(--red-bg);border-color:#fca5a5}.alert.lv-red .cd{color:var(--red)}
+.alert.lv-orange{background:var(--orange-bg);border-color:#fdba74}.alert.lv-orange .cd{color:var(--orange)}
+.alert.lv-blue{background:var(--blue-bg);border-color:#93c5fd}.alert.lv-blue .cd{color:var(--blue)}
+.alert.predicted{border-style:dashed}
+.badge{display:inline-block;font-size:10.5px;padding:1px 6px;border-radius:6px;vertical-align:2px;margin-left:4px;font-weight:600}
+.b-pred{background:#fef9c3;color:#a16207}
+.b-done{background:var(--green-bg);color:var(--green)}
+.b-ref{background:#f1f5f9;color:var(--muted)}
+.pulse{animation:pu 1.6s infinite}
+@keyframes pu{0%,100%{opacity:1}50%{opacity:.55}}
+/* 人物切换 */
+.profiles{display:flex;gap:8px}
+.pf{flex:1;border:2px solid var(--line);background:var(--card);border-radius:14px;padding:10px;text-align:center;cursor:pointer;transition:.15s}
+.pf .nm{font-weight:700;font-size:14.5px}
+.pf .tag{font-size:11.5px;color:var(--muted);margin-top:2px}
+.pf.on{border-color:var(--c1);background:linear-gradient(135deg,#eef2ff,#faf5ff)}
+.pf.on .nm{color:var(--c1)}
+/* 内容页签 */
+.tabs{display:flex;gap:6px;margin-top:12px;position:sticky;top:0;z-index:20;background:var(--bg);padding:6px 0}
+.tab{flex:1;text-align:center;padding:8px 2px;border-radius:10px;background:var(--card);font-size:13.5px;color:var(--muted);cursor:pointer;border:1.5px solid var(--line);white-space:nowrap}
+.tab.on{background:var(--c1);color:#fff;border-color:var(--c1);font-weight:600}
+/* 时间线 */
+.tl-month{font-weight:700;color:var(--c1);font-size:13.5px;margin:12px 0 6px}
+.ev{border-left:3px solid var(--line);padding:2px 0 2px 10px;margin-left:4px}
+.ev.act{border-color:var(--c1)}
+.ev .t{font-size:14px;font-weight:600}
+.ev .t .rg{font-size:11px;color:#fff;background:var(--c1);border-radius:5px;padding:0 5px;margin-right:5px;font-weight:600}
+.ev .rg.zj{background:#0891b2}.ev .rg.sh{background:#db2777}.ev .rg.ah{background:#d97706}.ev .rg.qg{background:#4f46e5}
+.ev .d{font-size:12px;color:var(--muted);margin:2px 0}
+.ev .n{font-size:12px;color:var(--muted)}
+.ev .a{font-size:12px;margin-top:3px;display:inline-block;color:var(--blue);text-decoration:none}
+/* 公告流 */
+.ann .t{font-size:14px;font-weight:600}
+.ann a{color:var(--ink);text-decoration:none}
+.ann .m{font-size:11.5px;color:var(--muted);margin-top:4px}
+.ann .chip{display:inline-block;font-size:10.5px;background:#eef2ff;color:var(--c1);border-radius:5px;padding:0 5px;margin-right:4px}
+.ann.ref{opacity:.72}
+.filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.fchip{font-size:12px;padding:4px 10px;border-radius:20px;background:var(--card);border:1.5px solid var(--line);color:var(--muted);cursor:pointer}
+.fchip.on{background:var(--c1);color:#fff;border-color:var(--c1)}
+/* 岗位 */
+.sumline{font-size:12.5px;color:var(--muted);background:var(--card);border-radius:10px;padding:8px 12px;margin-bottom:10px}
+.job .t{font-weight:600;font-size:14px}
+.job .m{font-size:12px;color:var(--muted);margin-top:3px}
+.job .m b{color:var(--ink);font-weight:600}
+.star{font-size:20px;background:none;border:none;cursor:pointer;color:#cbd5e1;float:right;line-height:1}
+.star.on{color:#f59e0b}
+.hint{font-size:12px;color:var(--muted);background:var(--blue-bg);border-radius:10px;padding:9px 12px;margin-bottom:10px}
+.srcbox{font-size:12px;color:var(--muted)}
+.srcbox .bad{color:var(--orange)}
+/* 题型·备考 */
+.cmp{width:100%;border-collapse:collapse;font-size:12px;margin-top:6px}
+.cmp th{background:#eef2ff;color:var(--c1);padding:6px;font-size:11.5px;text-align:left;white-space:nowrap}
+.cmp td{border-top:1px solid var(--line);padding:6px;vertical-align:top;line-height:1.5}
+.cmp td.item{white-space:nowrap;color:var(--muted);font-weight:600;font-size:11.5px}
+.exam-card .pt{font-weight:700;font-size:14px;margin-top:10px}
+.exam-card .pm{font-size:12.5px;margin:2px 0}
+.exam-card .f{font-size:12px;color:var(--muted);margin:3px 0}
+.exam-card .pill{display:inline-block;font-size:10.5px;background:#f1f5f9;color:var(--muted);border-radius:6px;padding:1px 6px;margin-left:4px;font-weight:400;vertical-align:1px}
+.difftag{display:inline-block;font-size:10px;background:#fee2e2;color:var(--red);border-radius:5px;padding:0 5px;margin-left:3px;font-weight:600;vertical-align:1px}
+.adv{border-radius:14px;padding:11px 13px;margin-bottom:9px;background:var(--card);border:1.5px solid var(--line)}
+.adv h3{font-size:14px;margin-bottom:6px}
+.adv ul{padding-left:18px;font-size:12.5px}
+.adv li{margin:5px 0;line-height:1.55}
+.adv.a1{border-color:#a5b4fc;background:linear-gradient(135deg,#eef2ff,#fff)}
+.adv.b1{border-color:#f0abfc;background:linear-gradient(135deg,#faf5ff,#fff)}
+footer{margin-top:22px;font-size:12px;color:var(--muted);text-align:center}
+footer a{color:var(--blue);text-decoration:none}
+details.sources{margin-top:16px;background:var(--card);border-radius:12px;padding:10px 14px;text-align:left}
+details.sources summary{font-weight:600;cursor:pointer;font-size:13.5px;color:var(--ink)}
+details.sources a{display:block;margin-top:6px;color:var(--blue);text-decoration:none;font-size:13px}
+.empty{color:var(--muted);font-size:13.5px;text-align:center;padding:20px 0}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="brand">📚 公考看板<span class="sub">江浙沪皖 · 国考 / 省考 / 事业编 / 教师编</span></div>
+    <div class="updated" id="updatedAt">⏰ 数据更新于 …</div>
+    <div class="meta-line" id="metaLine"></div>
+  </div>
+</header>
+
+<div class="wrap">
+  <section id="srcStatus"></section>
+  <section>
+    <h2>🔔 截止提醒 <span style="font-weight:400;font-size:12px;color:var(--muted)">按紧急程度排序</span></h2>
+    <div id="alerts"></div>
+  </section>
+  <nav class="profiles" id="profiles"></nav>
+  <nav class="tabs" id="tabs"></nav>
+  <main id="main"></main>
+  <footer>
+    <details class="sources">
+      <summary>🌐 官网入口（点开直达）</summary>
+      <a href="http://bm.scs.gov.cn/kl2027" target="_blank">国考2027专题站 ›</a>
+      <a href="http://www.jszzb.gov.cn/" target="_blank">江苏省委组织部（省考公告）›</a>
+      <a href="https://www.csjgwy.com/" target="_blank">长三角考录一体化平台（江浙沪皖报名）›</a>
+      <a href="https://gwy.zjks.gov.cn/" target="_blank">浙江人事考试网 ›</a>
+      <a href="https://www.shacs.gov.cn/" target="_blank">上海市公务员局 ›</a>
+      <a href="http://www.apta.gov.cn/" target="_blank">安徽人事考试网 ›</a>
+      <a href="https://hrss.ah.gov.cn/zxzx/ztzl/ahsszsydwgkzp/" target="_blank">安徽人社厅·省直事业编专栏 ›</a>
+      <a href="https://jyt.ah.gov.cn/xwzx/tzgg/index.html" target="_blank">安徽省教育厅·教师招聘 ›</a>
+      <a href="https://edu.hangzhou.gov.cn/col/col1228921906/index.html" target="_blank">杭州市教育局·教师招聘 ›</a>
+      <a href="https://jshrss.jiangsu.gov.cn/" target="_blank">江苏人社厅（事业编）›</a>
+      <a href="https://rlsbt.zj.gov.cn/" target="_blank">浙江人社厅（事业编）›</a>
+    </details>
+    <p style="margin-top:10px">时间标注「预计」的按往年规律推算，以官方公告为准<br>发布于官网后 4 小时内自动收录 · <a href="部署教程.html">给搭建者看的部署教程</a></p>
+  </footer>
+</div>
+
+<script>
+/* ================= 内置离线数据（file:// 双击预览用；部署后优先读 data/ 下的最新文件） ================= */
+window.__SEED__ = {
+  exam:{"updated_display":"2026年10月28日 14:34","note":"题型依据2026年度最新考情整理（国考笔试2025年11月底、江苏/浙江2025年12月7日、上海2025年12月、安徽2026年3月14日）；题型逐年微调，以当年官方考试大纲为准","diffs":{"title":"江苏省考 B类（行政执法） vs 国考 行政执法类","rows":[{"item":"开考时间","js":"12月上旬（2026年度实考12月7日）","gk":"11月底（比江苏省考早约1周）"},{"item":"行测总题量","js":"135题 / 120分钟（A/B类同）","gk":"130题 / 120分钟"},{"item":"数量关系","hot":1,"js":"20题＝数字推理5＋数学运算15（保留数字推理）","gk":"10题，不考数字推理"},{"item":"判断推理","hot":1,"js":"45题（类比/图形/定义各10＋逻辑判断15）","gk":"35题"},{"item":"政治理论","js":"行测单列模块（题量以当年大纲为准）","gk":"单列模块 20题"},{"item":"常识侧重","js":"综合常规考法","gk":"法律类占比明显更高（15题中约半数涉法）"},{"item":"申论","js":"B类卷：测查依法办事、公共服务能力","gk":"执法卷：2026年度实考＝概括＋分析＋2道应用文（执法文书/汇报材料）＋大作文"},{"item":"面试","hot":1,"js":"全省统一结构化：备考10分钟＋答题15分钟、共4道题、按A/B/C分类命题（苏州/省直部分/镇江为20分钟包干）","gk":"各招录机关自定：多为结构化；税务＝结构化小组（3人互评）；少数无领导小组"}],"takeaways":["申论能力要求几乎相同（依法办事＋公共服务），复习可共用一套","江苏行测强度更高：总题量135 vs 130、判断推理多10题、且保留国考已取消的数字推理","同时备考两者：按江苏强度练行测即可向下覆盖国考执法卷；申论另加练执法文书类应用文","面试要分开准备：江苏固定结构化10+15；若报税务系统需另练结构化小组（互评回应）"]},"regions":[{"id":"gk","name":"国考","tag":"2027年度：11.28下午专业科目 / 11.29行测＋申论","papers":[{"name":"行测（行政执法类卷）","meta":"120分钟 · 130题","modules":["政治理论 20题","常识判断 15题（法律侧重明显）","言语理解与表达 30题","数量关系 10题","判断推理 35题","资料分析 20题"],"features":["三套卷：副省级135题（数量15）/ 地市级130 / 行政执法130","行政执法卷常识判断侧重法律，题干常涉执法场景","大纲测查：依法办事能力、公共服务能力"]},{"name":"申论（行政执法类卷）","meta":"180分钟","modules":["2026年度实考：归纳概括＋综合分析＋2道应用文（执法案例汇报、推荐材料）＋大作文"],"features":["贯彻执行（文书写作）权重高，是执法卷最大特点"]},{"name":"专业科目（部分职位加试）","meta":"2027年度：11.28下午","modules":["公安机关人民警察职位","金融监管总局、证监会（财金/会计/法律/计算机4类）","8个非通用语职位（日语、法语等）"]}],"interview":"结构化面试为主；税务系统＝结构化小组（3人一组、备考15分钟、答题＋互相点评回应）；少数机关用无领导小组讨论（如国资委机关服务管理局、对外友协）"},{"id":"js","name":"江苏","tag":"2027年度笔试预计12月5-6日 · 2026年度实考12月7日","papers":[{"name":"行测 A/B/C 分类卷","meta":"120分钟 · A/B类135题、C类130题","modules":["六大部分（含政治理论单列模块，题量以当年大纲为准）","数量关系 20题＝数字推理5＋数学运算15","判断推理 45题＝类比10＋图形10＋定义10＋逻辑判断15","言语理解、资料分析、常识判断构成其余部分"],"features":["数字推理为江苏特色题型（国考已取消）","题量居各省前列，需专门练刷题速度","试卷分类：A类＝省市县机关综合管理（选调生同A类卷）/ B类＝行政执法 / C类＝乡镇街道基层"]},{"name":"申论 A/B/C 分卷","meta":"与行测分类对应","modules":["B类（行政执法）：测查依法办事、公共服务能力","C类（乡镇基层）：测查贯彻执行、群众工作、应用写作能力"]}],"interview":"全省统一结构化面试：备考10分钟＋答题15分钟，共4道题，按A/B/C分类命题；苏州、省直部分岗位、镇江为20分钟包干制","note":"报考公安人民警察职位的加试公安专业科目（2026年度在笔试前一天12月6日举行）"},{"id":"zj","name":"浙江","tag":"2027年度笔试预计12月5-6日 · 2026年度实考12月7日","papers":[{"name":"行测（按职位分卷）","meta":"120分钟 · A卷125题 / B卷120题 / C卷110题","modules":["综合类A卷","基层类B卷（乡镇街道）","行政执法类C卷（县级以上执法机关）","优秀村干部类D卷＋《综合应用能力》"]},{"name":"申论","meta":"按职位类别分卷对应"}],"interview":"结构化面试为主，法检系统常用无领导小组讨论；面试满分100分、合格60分"},{"id":"sh","name":"上海","tag":"2027年度笔试预计12月上旬 · 先笔试后报岗","papers":[{"name":"行测","meta":"2026年度起大纲改版，具体题量以当年大纲为准","modules":["言语理解与表达","判断推理","数量关系","资料分析","科学素养（原常识判断＋科学推理合并更名）","政治理论（新增，不定项选择题）"]},{"name":"申论","meta":"150分钟"},{"name":"专业科目（部分职位）","meta":"60分钟 · 50分","modules":["六选一：政法 / 数字信息 / 财经 / 城市建设 / 卫生健康 / 公安司法机关基层人民警察","城乡规划专业对口「城市建设」类"],"features":["是否加试以职位表为准"]}],"interview":"官方未作统一规定，以招录机关面试通知为准（往年多为结构化）","note":"特殊流程：报名时只选专业类别，笔试合格后（次年1月中旬）再进行职位报名"},{"id":"ah","name":"安徽","tag":"2027年度预计3月13-14日（多省联考） · 2026年度实考3月14日","papers":[{"name":"行测（全省一套卷）","meta":"120分钟 · 125题"},{"name":"申论（分卷）","meta":"按报考机关层级分卷","modules":["A卷＝省市级机关","B卷＝县乡级机关","C卷＝行政执法类"]}],"interview":"结构化面试为主，也可结构化小组、无领导小组讨论或综合选用（官方公告明确）"},{"id":"sy","name":"事业编","tag":"江浙沪皖节奏各异 · D类＝教师岗","papers":[{"name":"职业能力倾向测验（五类分卷）","meta":"A综合管理 / B社科专技 / C自然科学专技 / D中小学教师 / E医疗卫生","modules":["职测D（教师岗）100题：常识20＋言语25＋数量分析15＋判断推理30＋策略选择10"]},{"name":"综合应用能力（五类分卷）","meta":"与职测同类别对应","modules":["综应D（教师岗）：辨析题＋案例分析题＋教育方案设计题（全主观，150分/120分钟）"]}],"interview":"由招聘单位组织；教师岗多为试讲/说课＋结构化问答","note":"各地节奏：上海3月联考 / 安徽3月底联考 / 浙江省统考4月下旬＋9月 / 江苏不参加全国联考（省属统考约4月中旬，管理/通用专技/工勤三类自命题）"},{"id":"jsb","name":"教师编","tag":"语文岗要求普通话二甲 · B已具备 ✓","papers":[{"name":"教育综合知识（教综）","modules":["教育学、心理学、教育心理学","教育政策法规、教师职业道德"]},{"name":"语文学科专业知识","modules":["安徽统考：上午《学科专业知识》120分＋下午《教育综合知识》120分","南京：公共知识60分＋学科100分","杭州：一门制＝教综＋学科＋教材教法","宿迁：社招以岗位专业知识为主，师范专场考教育学、心理学＋专业知识"],"features":["各地科目组合差异大，报考前必看当地公告"]}],"interview":"试讲（语文岗含板书设计）为主，兼有说课、结构化问答、答辩；部分地区加朗读/粉笔字，技能测试多限音体美幼","note":"杭州提前批（11-12月，面向应届/择业期内优秀毕业生）多数免笔试、直接面试试讲——非绝对，如拱墅区11月批次仍设笔试＋面试"}],"advice":[{"who":"A","title":"👩‍🎨 给闺蜜A（城乡规划 · 2027应届 · 国考已报名）","items":["💰 头等大事：11月1-6日国考缴费确认，不缴费视为自动放弃","✏️ 国考最后30天：优先刷资料分析＋判断推理（提分最快），政治理论20题主背近期时政与重要会议表述","📜 若报行政执法岗：申论重点练应用文（执法文书、汇报材料类），2026年度实考2道应用文","🇯🇵 11月底无缝切换江苏省考：先攻数字推理（江苏特色5题，国考不考），再适应135题大题量","🏙️ 上海市考：城乡规划对口「城市建设」专业科目（60分钟50分），报上海需加学一本专业书；上海先笔试后报岗，1月中旬职位报名","🛟 安徽省考3月联考留作备用窗口，1月中下旬公告发布前不用分心","🎓 大五毕设与备考并行：11-12月考期优先，寒假集中推毕设"]},{"who":"B","title":"👩‍🏫 给闺蜜B（汉语言师范 · 2026届 · 二甲已过）","items":["🎓 应届身份仍有效：2027国考官方指南明确2025/2026届未就业者可按应届报考（「限2027届」职位除外）；江浙皖教师招聘择业期政策普遍宽松","🎤 杭州提前批11-12月启动：多数免笔试、直接试讲面试（拱墅等个别批次仍设笔试），现在就备好简历＋练10分钟试讲","📚 教师编主线：教综四件套（教育学/心理学/教育法规/职业道德）＋语文学科；安徽4月统考＝上午学科120分＋下午教综120分","🏫 江苏各市全年分散发布：南京＝公共知识60分＋学科100分，盯紧看板公告流自动收录","🧩 事业编D类兜底：职测D 100题（策略选择是特色题型）＋综应D（辨析/案例分析/教育方案设计，全主观）","✍️ 考公顺带不亏：汉语言属中文文秘类、岗位量大，行测与国考一套复习两场通用","🗣️ 普通话二甲✓ 语文岗硬门槛已过；面试试讲记得练板书设计（语文岗常考）"]}]},
+  meta:{last_updated_display:"2026年10月28日 13:46",next_check_hours:4,sources_status:[]},
+  events:[
+  {id:"gk2027-pay",title:"2027国考缴费确认",owner:["A"],region:"全国",type:"国考",action:"缴费",start:"2026-11-01",end:"2026-11-06T23:59",status:"confirmed",importance:"urgent",link:"http://bm.scs.gov.cn/kl2027",note:"不缴费视为自动放弃！"},
+  {id:"js2027-xuandiao",title:"2027江苏选调生（应届限定，1208名）",owner:["A"],region:"江苏",type:"选调",action:"报名",start:"2026-10-14",end:"2026-11-05T23:59",status:"predicted",importance:"high",link:"http://www.jszzb.gov.cn/",note:"公告已于10.13发布，仅限2027届应届"},
+  {id:"js2027-notice",title:"2027江苏省考公告",owner:["A","B"],region:"江苏",type:"省考",action:"公告",start:"2026-10-28",end:"2026-11-08",status:"predicted",importance:"urgent",link:"http://www.jszzb.gov.cn/",note:"公告日连续4年前移，预计10.30前后；发布后自动抓入公告流"},
+  {id:"sh2027-notice",title:"2027上海市考公告",owner:["A","B"],region:"上海",type:"省考",action:"公告",start:"2026-10-29",end:"2026-11-03",status:"predicted",importance:"urgent",link:"https://www.shacs.gov.cn/",note:"按2026年度10.31推算"},
+  {id:"zj2027-notice",title:"2027浙江省考公告",owner:["A","B"],region:"浙江",type:"省考",action:"公告",start:"2026-11-01",end:"2026-11-06",status:"predicted",importance:"urgent",link:"https://gwy.zjks.gov.cn/",note:"按2026年度11.3推算"},
+  {id:"js2027-signup",title:"2027江苏省考报名（约7天，当天16:00截止）",owner:["A","B"],region:"江苏",type:"省考",action:"报名",start:"2026-11-04",end:"2026-11-10T16:00",status:"predicted",importance:"urgent",link:"https://www.csjgwy.com/",note:"按2026年度节奏推算"},
+  {id:"sh2027-signup",title:"2027上海市考报名（中午12:00截止）",owner:["A","B"],region:"上海",type:"省考",action:"报名",start:"2026-11-01",end:"2026-11-07T12:00",status:"predicted",importance:"urgent",link:"https://bm.shacs.gov.cn/zlxt",note:"按2026年度：11.1-11.7 12:00"},
+  {id:"zj2027-signup",title:"2027浙江省考报名",owner:["A","B"],region:"浙江",type:"省考",action:"报名",start:"2026-11-06",end:"2026-11-11T17:00",status:"predicted",importance:"urgent",link:"https://www.csjgwy.com/",note:"按2026年度：11.6-11.11 17:00"},
+  {id:"gk2027-ticket",title:"2027国考准考证打印",owner:["A"],region:"全国",type:"国考",action:"准考证",start:"2026-11-23",end:"2026-11-29T23:59",status:"confirmed",importance:"high",link:"http://bm.scs.gov.cn/kl2027"},
+  {id:"gk2027-exam",title:"2027国考笔试",owner:["A"],region:"全国",type:"国考",action:"笔试",start:"2026-11-28",end:"2026-11-29T23:59",status:"confirmed",importance:"urgent",link:"http://bm.scs.gov.cn/kl2027",note:"11.28下午专业科目；11.29行测+申论"},
+  {id:"js2027-pay",title:"2027江苏省考缴费",owner:["A","B"],region:"江苏",type:"省考",action:"缴费",start:"2026-11-12",end:"2026-11-13T16:00",status:"predicted",importance:"high",link:"https://www.csjgwy.com/"},
+  {id:"js2027-ticket",title:"2027江苏省考准考证打印",owner:["A","B"],region:"江苏",type:"省考",action:"准考证",start:"2026-12-03",end:"2026-12-06T23:59",status:"predicted",importance:"high",link:"https://www.csjgwy.com/"},
+  {id:"js2027-exam",title:"2027江苏省考笔试",owner:["A","B"],region:"江苏",type:"省考",action:"笔试",start:"2026-12-05",end:"2026-12-06T23:59",status:"predicted",importance:"urgent",link:"https://www.csjgwy.com/",note:"按往年12月第一个周末"},
+  {id:"zj2027-exam",title:"2027浙江省考笔试",owner:["A","B"],region:"浙江",type:"省考",action:"笔试",start:"2026-12-05",end:"2026-12-06T23:59",status:"predicted",importance:"urgent",link:"https://gwy.zjks.gov.cn/"},
+  {id:"sh2027-exam",title:"2027上海市考笔试",owner:["A","B"],region:"上海",type:"省考",action:"笔试",start:"2026-12-05",end:"2026-12-06T23:59",status:"predicted",importance:"urgent",link:"https://bm.shacs.gov.cn/zlxt"},
+  {id:"gk2027-score",title:"2027国考成绩公布",owner:["A"],region:"全国",type:"国考",action:"成绩",start:"2027-01-10",end:"2027-01-20",status:"predicted",link:"http://bm.scs.gov.cn/kl2027"},
+  {id:"js2027-score",title:"2027江苏省考成绩公布",owner:["A","B"],region:"江苏",type:"省考",action:"成绩",start:"2027-01-10",end:"2027-01-20",status:"predicted",link:"https://www.csjgwy.com/"},
+  {id:"zj2027-score",title:"2027浙江省考成绩公布",owner:["A","B"],region:"浙江",type:"省考",action:"成绩",start:"2027-01-05",end:"2027-01-15",status:"predicted",link:"https://gwy.zjks.gov.cn/"},
+  {id:"sh2027-score",title:"2027上海市考成绩公布",owner:["A","B"],region:"上海",type:"省考",action:"成绩",start:"2027-01-05",end:"2027-01-12",status:"predicted",link:"https://www.shacs.gov.cn/"},
+  {id:"ah2027-notice",title:"2027安徽省考公告",owner:["A","B"],region:"安徽",type:"省考",action:"公告",start:"2027-01-13",end:"2027-01-18",status:"predicted",importance:"high",link:"http://www.apta.gov.cn/",note:"按2026年度1.15推算"},
+  {id:"ah2027-sy",title:"安徽事业单位省直2027",owner:["A","B"],region:"安徽",type:"事业编",action:"公告",start:"2027-01-28",end:"2027-02-06T18:00",status:"predicted",importance:"high",link:"https://hrss.ah.gov.cn/zxzx/ztzl/ahsszsydwgkzp/",note:"2026年度：公告1.29/报名2.2-2.6/笔试3.28-29"},
+  {id:"sh2027-sy1",title:"上海事业单位第一批2027",owner:["A","B"],region:"上海",type:"事业编",action:"公告",start:"2027-01-26",end:"2027-02-06",status:"predicted",importance:"high",link:"https://www.shacs.gov.cn/",note:"随申办APP报名"},
+  {id:"ah2027-signup",title:"2027安徽省考报名",owner:["A","B"],region:"安徽",type:"省考",action:"报名",start:"2027-01-18",end:"2027-01-25T18:00",status:"predicted",importance:"urgent",link:"http://www.apta.gov.cn/"},
+  {id:"ah2027-teacher",title:"安徽中小学教师招聘2027（省统考）",owner:["B"],region:"安徽",type:"教师编",action:"笔试",start:"2027-02-20",end:"2027-04-10",status:"predicted",importance:"high",link:"https://jyt.ah.gov.cn/xwzx/tzgg/index.html",note:"2026年度：大纲3.12发布/4.4笔试"},
+  {id:"ah2027-exam",title:"2027安徽省考笔试（多省联考）",owner:["A","B"],region:"安徽",type:"省考",action:"笔试",start:"2027-03-13",end:"2027-03-14T23:59",status:"predicted",importance:"urgent",link:"http://www.apta.gov.cn/",note:"3月第二个周末"},
+  {id:"sh2027-teacher",title:"上海各区教师编2027",owner:["B"],region:"上海",type:"教师编",action:"公告",start:"2027-03-01",end:"2027-04-30",status:"predicted",link:"https://www.shacs.gov.cn/",note:"各区教育局发布，3-4月集中"},
+  {id:"js2027-sy",title:"江苏事业单位2027",owner:["A","B"],region:"江苏",type:"事业编",action:"公告",start:"2027-03-16",end:"2027-03-25",status:"predicted",importance:"high",link:"https://jshrss.jiangsu.gov.cn/",note:"2026年度：公告3.18/笔试4.18"},
+  {id:"zj2027-sy1",title:"浙江事业单位上半年2027",owner:["A","B"],region:"浙江",type:"事业编",action:"公告",start:"2027-03-15",end:"2027-03-25",status:"predicted",importance:"high",link:"https://rlsbt.zj.gov.cn/",note:"2026年度：公告3.17/笔试4.25；下半年还有8月批次"},
+  {id:"hz2027-teacher",title:"杭州教师招聘批次2027",owner:["B"],region:"浙江",type:"教师编",action:"笔试",start:"2027-04-25",end:"2027-05-24",status:"predicted",importance:"high",link:"https://edu.hangzhou.gov.cn/col/col1228921906/index.html",note:"2026年度：4.28公告/5.24笔试；12月起留意提前批"},
+  {id:"js2027-teacher",title:"江苏各市教师编（全年分散·自动巡检）",owner:["B"],region:"江苏",type:"教师编",action:"公告",start:"2026-11-01",end:"2027-06-30",status:"predicted",link:"https://rsj.changzhou.gov.cn/",note:"各市人社局+教育局分散发布，公告流自动收录"},
+  {id:"sh2027-sy2",title:"上海事业单位第二批2027",owner:["A","B"],region:"上海",type:"事业编",action:"公告",start:"2027-10-15",end:"2027-10-23",status:"predicted",link:"https://www.shacs.gov.cn/"}],
+  announcements:[
+  {id:"ann-gk2027",title:"中央机关及其直属机构2027年度考试录用公务员公告",url:"http://bm.scs.gov.cn/kl2027",date:"2026-10-13",region:"全国",exam_type:"国考",owner:["A","B"],discovered_display:"2026年10月28日 13:42 收录",source:"国家公务员局专题站"},
+  {id:"ann-js-xd",title:"江苏省2027年应届优秀大学毕业生选调公告（1208名，仅限应届）",url:"http://www.jszzb.gov.cn/",date:"2026-10-13",region:"江苏",exam_type:"选调",owner:["A"],discovered_display:"2026年10月28日 13:42 收录",source:"中共江苏省委组织部"},
+  {id:"ann-ah-teacher",title:"安徽省2026年中小学教师公开招聘省命题考试笔试时间及笔试大纲公告",url:"https://jyt.ah.gov.cn/xwzx/tzgg/40783870.html",date:"2026-03-12",region:"安徽",exam_type:"教师编",owner:["B"],discovered_display:"2026年10月28日 13:42 收录",source:"安徽省教育厅",is_reference:true,ref_note:"2026年度公告，了解安徽教师编节奏用"},
+  {id:"ann-zj-sy",title:"浙江省省属事业单位2026年上半年集中公开招聘公告（664人）",url:"https://rlsbt.zj.gov.cn/col/col1229743683/art/2026/art_aa250f574a114936b87ea93a5ca2c6b5.html",date:"2026-03-17",region:"浙江",exam_type:"事业编",owner:["A","B"],discovered_display:"2026年10月28日 13:42 收录",source:"浙江省人社厅",is_reference:true}],
+  jobs:{
+  summary:{total:0,note:"各省职位表随公告一起发布（江苏预计10.30前后），发布后自动解析并按专业匹配"},
+  jobs:[
+  {id:"ref-a1",is_reference:true,exam:"省考",region:"江苏",unit:"江苏省发展和改革委员会（2026年度先例）",position:"长江经济带发展处·二级主任科员及以下",major:"城乡规划、城乡规划学、城市规划等",identity:"应届可报",url:"http://www.jszzb.gov.cn/tzgg/art/2025/art_6751a2769ba4505cfed66f38573a7983.html",owner:["A"],note:"2026年度真实岗位，说明城乡规划在省直机关有对口岗"},
+  {id:"ref-a2",is_reference:true,exam:"省考",region:"江苏",unit:"江苏省国防动员办公室（2026年度先例）",position:"综合管理岗·一级主任科员及以下",major:"城乡规划学、建筑学、土木工程、市政工程等",identity:"应届可报",url:"http://www.jszzb.gov.cn/tzgg/art/2025/art_ab7eeffb10b7f4423a4806d2cf1f9138.html",owner:["A"],note:"自然资源局、住建局、开发区管委会是规划专业主要对口方向"},
+  {id:"ref-b1",is_reference:true,exam:"教师编",region:"江浙沪皖",unit:"各地中小学（各市县持续发布）",position:"语文教师岗",major:"汉语言文学（师范）、中国语言文学类",identity:"2026届毕业2年内未就业可报多数应届岗",url:"https://jyt.ah.gov.cn/xwzx/tzgg/40783870.html",owner:["B"],note:"语文岗要求普通话二甲——已具备。重点盯：江苏各市、安徽4月统考、杭州5月批次、上海各区3-4月"},
+  {id:"ref-b2",is_reference:true,exam:"省考",region:"江浙沪皖",unit:"各级机关（岗位量大）",position:"公文写作/宣传/办公室类岗位",major:"汉语言文学属【中文文秘类】（江苏省考最大类别之一）",identity:"择业期内未就业可按应届报考",url:"https://rsj.nantong.gov.cn/ntsrsj/upload/4c5698ae-5af7-4b4c-b765-8d0dd8dcbcac.pdf",owner:["B"],note:"汉语言是考公第一梯队专业"}]}
+};
+
+/* ================= 应用 ================= */
+const PROFILES = {
+  A:{nm:"👩‍🎨 闺蜜A", tag:"城乡规划 · 2027应届"},
+  B:{nm:"👩‍🏫 闺蜜B", tag:"汉语言师范 · 教师编+考公"}
+};
+const ACTION_ICO = {缴费:"💰",报名:"📝",笔试:"✏️",准考证:"🖨️",公告:"📢",成绩:"🔍"};
+const REG_CLS = {"江苏":"","浙江":" zj","上海":" sh","安徽":" ah","全国":" qg"};
+const WD = ["日","一","二","三","四","五","六"];
+let DATA_ = null, state = {profile: localStorage.getItem("gkb_profile")||"A", tab:"timeline", annRegion:"全部", examRegion:"全部"};
+let stars = JSON.parse(localStorage.getItem("gkb_stars")||'{"A":[],"B":[]}');
+
+const norm = x => Array.isArray(x)?x:(x?[x]:["A","B"]);
+const ownOf = it => norm(it.owner||it.owners);
+const endMs = e => { const s=String(e.end||e.start); let d=new Date(s.length<=10?s+"T23:59":s.replace(" ","T")); return isNaN(d)?Date.now():(s.length<=10?d.getTime()+44*60000:d.getTime()); };
+const startMs = e => new Date(String(e.start).replace(" ","T")).getTime()||0;
+const fmtD = s => { const d=new Date(String(s).replace(" ","T")); return isNaN(d)?String(s):`${d.getMonth()+1}月${d.getDate()}日${s.length>10?" "+String(s).slice(11,16):""}`; };
+const esc = s => String(s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+async function loadAll(){
+  try{
+    const [m,e,a,j,x] = await Promise.all(["meta","events","announcements","jobs","exam"].map(n=>
+      fetch(`data/${n}.json?t=${Date.now()}`).then(r=>{if(!r.ok)throw 0;return r.json()})));
+    return {meta:m, events:e.events||e, announcements:a.announcements||a, jobs:j.jobs?j:{jobs:j}, exam:x};
+  }catch(err){
+    try{ // 离线兜底：上次成功加载的缓存
+      const c=JSON.parse(localStorage.getItem("gkb_cache"));
+      if(c&&c.events) return c;
+    }catch(e){}
+    return {meta:__SEED__.meta, events:__SEED__.events, announcements:__SEED__.announcements, jobs:__SEED__.jobs, exam:__SEED__.exam};
+  }
+}
+
+function renderMeta(){
+  const m=DATA_.meta, now=new Date();
+  document.getElementById("updatedAt").textContent=`⏰ 数据更新于 ${m.last_updated_display||"未知"}`;
+  const fail=(m.sources_status||[]).filter(s=>!s.ok);
+  document.getElementById("metaLine").innerHTML=
+    `每${m.next_check_hours||4}小时自动巡检 · 今天是 ${now.getFullYear()}年${now.getMonth()+1}月${now.getDate()}日 星期${WD[now.getDay()]}`;
+  document.getElementById("srcStatus").innerHTML = fail.length?
+    `<div class="card srcbox">⚠️ 本轮巡检 ${fail.length} 个官网访问超时（<span class="bad">${fail.map(f=>esc(f.name)).join("、")}</span>），已保留历史数据，下轮自动重试</div>`:"";
+}
+
+function activeEvents(){
+  const now=Date.now();
+  return DATA_.events.filter(e=>ownOf(e).includes(state.profile) && e.status!=="done" && endMs(e)>=now-3600e3);
+}
+function renderAlerts(){
+  const now=Date.now(), DAY=86400e5?86400e3:0; const D=86400e3;
+  // 关注岗位的截止也并入提醒
+  const starred = DATA_.jobs.jobs.filter(j=>stars[state.profile].includes(j.id) && j.deadline).map(j=>({
+    title:"⭐ "+j.unit+"·"+j.position, action:"报名", start:j.start||j.deadline, end:j.deadline,
+    status:"confirmed", link:j.url, note:"来自我的关注"}));
+  const list=[...activeEvents(),...starred].sort((a,b)=>{
+    const pa=a.status==="predicted"?1:0, pb=b.status==="predicted"?1:0;
+    return (pa-pb)||(endMs(a)-endMs(b));});
+  const box=document.getElementById("alerts");
+  if(!list.length){box.innerHTML='<div class="empty">当前身份暂无进行中的事项 ✅</div>';return;}
+  box.innerHTML=list.slice(0,10).map(e=>{
+    const dl=Math.ceil((endMs(e)-now)/D), started=startMs(e)<=now;
+    let lv="lv-blue", cd;
+    if(dl<=0){cd="⚠️ 今天截止！";lv="lv-red";}
+    else if(dl<=3){cd=`⏳ 仅剩 ${dl} 天`;lv="lv-red";}
+    else if(dl<=7){cd=`⏳ 剩 ${dl} 天`;lv="lv-orange";}
+    else cd=`📅 ${fmtD(e.start)} 开始 · ${fmtD(e.end)} 截止`;
+    if(!started&&dl>3)cd=`📅 ${fmtD(e.start)} 开始`;
+    const pred=e.status==="predicted"?'<span class="badge b-pred">预计·以公告为准</span>':"";
+    return `<div class="alert ${lv} ${e.status==="predicted"?"predicted":""}">
+      <div class="ico">${ACTION_ICO[e.action]||"📌"}</div>
+      <div style="flex:1"><div class="t">${esc(e.title)}${pred}</div>
+      <div class="d">${e.region||""} · ${e.type||""}${e.note?" · "+esc(e.note):""}</div>
+      <div class="cd ${lv==="lv-red"?"pulse":""}">${cd}</div></div>
+      ${e.link?`<a class="btn" target="_blank" href="${esc(e.link)}">去办理 ›</a>`:""}</div>`;
+  }).join("") + (list.length>10?`<div class="empty">还有 ${list.length-10} 条较远期事项，见「时间线」</div>`:"");
+}
+
+function renderProfiles(){
+  document.getElementById("profiles").innerHTML=Object.entries(PROFILES).map(([k,p])=>
+    `<div class="pf ${state.profile===k?"on":""}" onclick="switchPf('${k}')"><div class="nm">${p.nm}</div><div class="tag">${p.tag}</div></div>`).join("");
+}
+function switchPf(k){state.profile=k;localStorage.setItem("gkb_profile",k);renderProfiles();renderAlerts();renderTab();}
+function switchTab(t){state.tab=t;renderTabs();renderTab();window.scrollTo({top:document.getElementById("profiles").offsetTop-60,behavior:"smooth"});}
+function renderTabs(){
+  const tabs=[["timeline","📅 时间线"],["ann","📢 公告"],["jobs","💼 岗位"],["exam","📝 题型"],["score","📊 分数·人数"]];
+  document.getElementById("tabs").innerHTML=tabs.map(([k,n])=>
+    `<div class="tab ${state.tab===k?"on":""}" onclick="switchTab('${k}')">${n}</div>`).join("");
+}
+function renderTab(){
+  ({timeline:renderTimeline,ann:renderAnn,jobs:renderJobs,exam:renderExam,score:renderScore})[state.tab]();
+}
+
+function renderTimeline(){
+  const evs=[...activeEvents(),...DATA_.events.filter(e=>ownOf(e).includes(state.profile)&&e.status==="done")]
+    .sort((a,b)=>startMs(a)-startMs(b));
+  const months={};
+  evs.forEach(e=>{const d=new Date(String(e.start).replace(" ","T"));const k=isNaN(d)?String(e.start).slice(0,7):`${d.getFullYear()}年${d.getMonth()+1}月`;(months[k]=months[k]||[]).push(e);});
+  document.getElementById("main").innerHTML=Object.entries(months).map(([mo,list])=>
+    `<div class="tl-month">${mo}</div>`+list.map(e=>{
+      const started=startMs(e)<=Date.now(), done=endMs(e)<Date.now();
+      const chip=done?'<span class="badge b-done">已结束</span>':(e.status==="predicted"?'<span class="badge b-pred">预计</span>':"");
+      return `<div class="ev ${started&&!done?"act":""}"><div class="t"><span class="rg${REG_CLS[e.region]||""}">${e.region||""}</span>${esc(e.title)} ${chip}</div>
+        <div class="d">🕐 ${fmtD(e.start)} → ${fmtD(e.end)} · ${ACTION_ICO[e.action]||""}${e.action||""}</div>
+        ${e.note?`<div class="n">${esc(e.note)}</div>`:""}
+        ${e.link?`<a class="a" target="_blank" href="${esc(e.link)}">原文入口 ›</a>`:""}</div>`;
+    }).join("")).join("");
+}
+
+let annCache=null;
+function renderAnn(){
+  if(!annCache){
+    document.getElementById("main").innerHTML='<div class="empty">加载中…</div>';
+  }
+  const regions=["全部","江苏","浙江","上海","安徽","全国"];
+  const list=DATA_.announcements.filter(a=>ownOf(a).includes(state.profile)&&(state.annRegion==="全部"||a.region===state.annRegion||a.region==="长三角"||a.region==="江浙沪皖"));
+  document.getElementById("main").innerHTML=
+    `<div class="filters">${regions.map(r=>`<span class="fchip ${state.annRegion===r?"on":""}" onclick="state.annRegion='${r}';renderAnn()">${r}</span>`).join("")}</div>`+
+    (list.length?list.map(a=>{
+      const ref=a.is_reference?' <span class="badge b-ref">往期参考</span>':"";
+      return `<div class="card ann ${a.is_reference?"ref":""}">
+        <div class="t"><a target="_blank" href="${esc(a.url)}">${esc(a.title)}</a>${ref}</div>
+        ${a.ref_note?`<div class="m">${esc(a.ref_note)}</div>`:""}
+        <div class="m"><span class="chip">${a.region||""}</span><span class="chip">${a.exam_type||""}</span>
+        📅 ${a.date||""} · ${esc(a.source||"")}${a.discovered_display?` · ${esc(a.discovered_display)}`:""}</div></div>`;
+    }).join(""):'<div class="empty">暂无该地区公告</div>');
+}
+
+function renderJobs(){
+  const all=DATA_.jobs.jobs, s=DATA_.jobs.summary||{};
+  const mine=all.filter(j=>ownOf(j).includes(state.profile));
+  const starred=mine.filter(j=>stars[state.profile].includes(j.id));
+  const rest=mine.filter(j=>!stars[state.profile].includes(j.id));
+  const row=j=>{
+    const on=stars[state.profile].includes(j.id);
+    return `<div class="card job"><button class="star ${on?"on":""}" onclick="toggleStar('${j.id}')">${on?"★":"☆"}</button>
+      <div class="t">${j.is_reference?"💡 ":""}${esc(j.unit)}</div>
+      <div class="m"><b>${esc(j.position)}</b></div>
+      <div class="m">🎓 ${esc(j.major||j.majors||"")}</div>
+      <div class="m">🏷️ ${esc(j.identity||"")} ${j.deadline?`· ⏰ 截止 ${fmtD(j.deadline)}`:""}</div>
+      ${j.note?`<div class="m">${esc(j.note)}</div>`:""}
+      ${j.url?`<div class="m"><a href="${esc(j.url)}" target="_blank" style="color:var(--blue)">查看原文 ›</a></div>`:""}</div>`;
+  };
+  document.getElementById("main").innerHTML=
+    `<div class="sumline">📋 ${esc(s.note||"")} ${s.total?`（共${s.total}岗 · A可报${s.matched_A||0} · B可报${s.matched_B||0}）`:""}</div>`+
+    (starred.length?`<h2>⭐ 我的关注（置顶）</h2>`+starred.map(row).join(""):"")+
+    `<h2>💼 岗位列表 ${mine.length?`（${mine.length}）`:""}</h2>`+
+    (rest.length?rest.map(row).join(""):'<div class="empty">职位表发布后将自动填充</div>');
+}
+function toggleStar(id){
+  const arr=stars[state.profile], i=arr.indexOf(id);
+  i>=0?arr.splice(i,1):arr.push(id);
+  localStorage.setItem("gkb_stars",JSON.stringify(stars));
+  renderTab();
+}
+
+function renderExam(){
+  const X=DATA_.exam;
+  const box=document.getElementById("main");
+  if(!X||!X.regions){box.innerHTML='<div class="empty">题型数据未载入，联网后将自动获取</div>';return;}
+  const regions=["全部","国考","江苏","浙江","上海","安徽","事业编","教师编"];
+  let html=`<div class="hint">ℹ️ 题型整理于 ${esc(X.updated_display||"")} · 依据2026年度最新考情整理，逐年微调，以当年官方大纲为准</div>`;
+  const D=X.diffs;
+  if(D&&D.rows){html+=`<div class="card exam-card"><div class="pt" style="margin-top:0">⚡ 重点对比 · ${esc(D.title)}</div>
+    <table class="cmp"><tr><th>对比项</th><th>江苏省考 B类</th><th>国考</th></tr>`+
+    D.rows.map(r=>`<tr><td class="item">${esc(r.item)}${r.hot?'<span class="difftag">差异大</span>':""}</td><td>${esc(r.js)}</td><td>${esc(r.gk)}</td></tr>`).join("")+
+    `</table>`+
+    (D.takeaways||[]).map(t=>`<div class="f">✅ ${esc(t)}</div>`).join("")+`</div>`;}
+  html+=`<div class="filters">${regions.map(r=>`<span class="fchip ${state.examRegion===r?"on":""}" onclick="state.examRegion='${r}';renderExam()">${r}</span>`).join("")}</div>`;
+  html+=(X.regions||[]).filter(g=>state.examRegion==="全部"||g.name===state.examRegion).map(g=>
+    `<div class="card exam-card"><div class="pt" style="margin-top:0">📍 ${esc(g.name)}<span class="pill">${esc(g.tag||"")}</span></div>`+
+    (g.papers||[]).map(p=>`<div class="pt">${esc(p.name)}</div>`+
+      (p.meta?`<div class="f">🕐 ${esc(p.meta)}</div>`:"")+
+      (p.modules||[]).map(m=>`<div class="pm">· ${esc(m)}</div>`).join("")+
+      (p.features||[]).map(f=>`<div class="f">▸ ${esc(f)}</div>`).join("")).join("")+
+    (g.interview?`<div class="pt">🎤 面试</div><div class="pm">${esc(g.interview)}</div>`:"")+
+    (g.note?`<div class="f">💡 ${esc(g.note)}</div>`:"")+`</div>`).join("");
+  html+=`<h2>🎯 备考建议（A / B 分别呈现）</h2>`+(X.advice||[]).map(a=>
+    `<div class="adv ${a.who==="A"?"a1":"b1"}"><h3>${esc(a.title)}</h3><ul>${(a.items||[]).map(i=>`<li>${esc(i)}</li>`).join("")}</ul></div>`).join("");
+  box.innerHTML=html;
+}
+
+function renderScore(){
+  const rows=[
+    ["国考 2027","2026-11-29","2027年1月中旬","http://bm.scs.gov.cn/kl2027","报名人数：报名期官方每日更新（已截止）"],
+    ["江苏省考 2027","预计2026-12-06","预计2027年1月中旬","https://www.csjgwy.com/","报名人数：报名期每日更新可查"],
+    ["浙江省考 2027","预计2026-12-06","预计2027年1月上中旬","https://gwy.zjks.gov.cn/","报名人数：报名期可查"],
+    ["上海市考 2027","预计2026-12-06","预计2027年1月上旬","https://www.shacs.gov.cn/","报名人数：职位报名人数报名期可查"],
+    ["安徽省考 2027","预计2027-03-14","预计2027年4月初","http://www.apta.gov.cn/","报名人数：报名期每日更新"]
+  ];
+  document.getElementById("main").innerHTML=
+    `<div class="hint">ℹ️ 笔试成绩一般考后1~2个月公布，分数线（合格线/进面线）随成绩发布。发布后公告流会自动收录，此处展示查询入口。</div>`+
+    rows.map(([n,wt,st,url,ct])=>`<div class="card"><div class="t" style="font-weight:600;font-size:14.5px">${n}</div>
+      <div class="m" style="font-size:12.5px;color:var(--muted);margin-top:4px">✏️ 笔试：${wt}　🔍 出分：${st}</div>
+      <div class="m" style="font-size:12px;color:var(--muted);margin-top:2px">${ct}</div>
+      <div class="m" style="margin-top:5px"><a href="${url}" target="_blank" style="color:var(--blue);font-size:13px">官方查询入口 ›</a></div></div>`).join("");
+}
+
+(async function init(){
+  DATA_=await loadAll();
+  try{localStorage.setItem("gkb_cache",JSON.stringify(DATA_));}catch(e){}
+  renderMeta();renderAlerts();renderProfiles();renderTabs();renderTab();
+  if("serviceWorker" in navigator && location.protocol.startsWith("http")){
+    navigator.serviceWorker.register("sw.js").catch(()=>{});
+  }
+})();
+</script>
+</body>
+</html>
