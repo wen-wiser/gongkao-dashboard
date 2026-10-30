@@ -2,6 +2,19 @@
   "note": "公告流：本地预置部分为调研核实的官方入口；部署后由脚本每4小时自动巡检官网，新公告自动加入并推送提醒",
   "announcements": [
     {
+      "id": "auto-js_zzb-6757653026",
+      "title": "江苏省2027年应届优秀大学毕业生选调乡镇（街道）职位报名有关事项公告\n              302026-10",
+      "url": "http://www.jszzb.gov.cn/tzgg/art/2026/art_e57bbc5ce42c49c288cbec425f749986.html",
+      "date": "2026-10-30",
+      "region": "江苏",
+      "exam_type": "省考",
+      "owner": [
+        "A"
+      ],
+      "discovered_display": "2026年10月30日 12:35 收录",
+      "source": "江苏省委组织部（公务员招录）"
+    },
+    {
       "id": "auto-ah_apta-3986991051",
       "title": "事业单位公开招聘违纪违规行为处理规定",
       "url": "http://www.apta.gov.cn/Information/LawsDetail?lid=13",
