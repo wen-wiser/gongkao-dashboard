@@ -1,21 +1,15 @@
 {
-  "last_updated_display": "2026年11月07日 00:40",
-  "last_updated_iso": "2026-11-07T00:40+08:00",
+  "last_updated_display": "2026年11月07日 04:37",
+  "last_updated_iso": "2026-11-07T04:37+08:00",
   "next_check_hours": 4,
   "run_ok": true,
-  "run_at_utc": "2026-11-06T16:40Z",
-  "sources_ok": 8,
+  "run_at_utc": "2026-11-06T20:37Z",
+  "sources_ok": 9,
   "sources_total": 14,
   "sources_status": [
     {
       "id": "gk2027",
       "name": "国考2027专题站",
-      "ok": true,
-      "error": null
-    },
-    {
-      "id": "sh_gwy",
-      "name": "上海市公务员局",
       "ok": true,
       "error": null
     },
@@ -26,8 +20,14 @@
       "error": null
     },
     {
-      "id": "ah_apta",
-      "name": "安徽人事考试网",
+      "id": "sh_gwy",
+      "name": "上海市公务员局",
+      "ok": true,
+      "error": null
+    },
+    {
+      "id": "js_zzb",
+      "name": "江苏省委组织部（公务员招录）",
       "ok": true,
       "error": null
     },
@@ -44,6 +44,12 @@
       "error": null
     },
     {
+      "id": "ah_apta",
+      "name": "安徽人事考试网",
+      "ok": true,
+      "error": null
+    },
+    {
       "id": "js_sq_teacher",
       "name": "宿迁人社局（江苏教师编示例源）",
       "ok": true,
@@ -56,34 +62,28 @@
       "error": null
     },
     {
-      "id": "csj",
-      "name": "长三角公务员考录一体化平台",
+      "id": "ah_xf",
+      "name": "安徽先锋网",
       "ok": false,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.csjgwy.com', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.csjgwy.com', port=443) at 0x7ac4f2d4ee90>, 'Connection to www.csjgwy.com timed out. (connect timeout=20)'))"
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.ahxf.gov.cn', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.ahxf.gov.cn', port=443) at 0x7d75be109a10>, 'Connection to www.ahxf.gov.cn timed out. (connect timeout=20)'))"
     },
     {
       "id": "zj_gwy",
       "name": "浙江人事考试网",
       "ok": false,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='gwy.zjks.gov.cn', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='gwy.zjks.gov.cn', port=443) at 0x7ac4f2d4fc10>, 'Connection to gwy.zjks.gov.cn timed out. (connect timeout=20)'))"
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='gwy.zjks.gov.cn', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='gwy.zjks.gov.cn', port=443) at 0x7d75be100610>, 'Connection to gwy.zjks.gov.cn timed out. (connect timeout=20)'))"
     },
     {
-      "id": "ah_xf",
-      "name": "安徽先锋网",
+      "id": "csj",
+      "name": "长三角公务员考录一体化平台",
       "ok": false,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.ahxf.gov.cn', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.ahxf.gov.cn', port=443) at 0x7ac4f2d69290>, 'Connection to www.ahxf.gov.cn timed out. (connect timeout=20)'))"
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.csjgwy.com', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.csjgwy.com', port=443) at 0x7d75be0ea050>, 'Connection to www.csjgwy.com timed out. (connect timeout=20)'))"
     },
     {
       "id": "zj_rlsbt",
       "name": "浙江人社厅（事业编）",
       "ok": false,
       "error": "ReadTimeout: HTTPSConnectionPool(host='rlsbt.zj.gov.cn', port=443): Read timed out. (read timeout=20)"
-    },
-    {
-      "id": "js_zzb",
-      "name": "江苏省委组织部（公务员招录）",
-      "ok": false,
-      "error": "ReadTimeout: HTTPSConnectionPool(host='www.jszzb.gov.cn', port=443): Read timed out. (read timeout=20)"
     },
     {
       "id": "hz_edu",
