@@ -2,6 +2,20 @@
   "note": "公告流：本地预置部分为调研核实的官方入口；部署后由脚本每4小时自动巡检官网，新公告自动加入并推送提醒",
   "announcements": [
     {
+      "id": "auto-js_cz_teacher-7251922660",
+      "title": "“才聚龙城 智引京才”常州赴京“四对接”校园招聘收获颇丰",
+      "url": "https://rsj.changzhou.gov.cn/html/czrsj/2026/HBPDPLJC_1120/49995.html",
+      "date": "2026-11-25",
+      "region": "江苏",
+      "exam_type": "教师编",
+      "owner": [
+        "A",
+        "B"
+      ],
+      "discovered_display": "2026年11月25日 12:58 收录",
+      "source": "常州人社局（江苏教师编示例源）"
+    },
+    {
       "id": "auto-js_zzb-6252175907",
       "title": "江苏省省管领导干部任职前公示\n              122026-11",
       "url": "http://www.jszzb.gov.cn/xwzx/szyw/jssy/art/2026/art_c793c146a2034f57a681a3bea8b83879.html",
